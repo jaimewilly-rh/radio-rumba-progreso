@@ -6,15 +6,20 @@ media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "noticias"
+  - name: "noticias_radio"
     label: "Noticias de la Radio"
-    folder: "content/noticias"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Título de la Noticia", name: "title", widget: "string"}
-      - {label: "Categoría", name: "category", widget: "select", options: ["Comunidad", "Educación", "Cultura", "Música", "Deportes"]}
-      - {label: "Fecha", name: "date", widget: "datetime"}
-      - {label: "Foto / Imagen", name: "image", widget: "image", required: false}
-      - {label: "Resumen breve", name: "summary", widget: "text"}
-      - {label: "Contenido completo", name: "body", widget: "markdown"}
+    files:
+      - file: "content/noticias.json"
+        label: "Lista de Noticias y Portada"
+        name: "noticias"
+        fields:
+          - label: "Artículos Publicados"
+            name: "articulos"
+            widget: "list"
+            fields:
+              - {label: "Título de la Noticia", name: "title", widget: "string"}
+              - {label: "Categoría", name: "category", widget: "select", options: ["Comunidad", "Educación", "Cultura", "Música", "Actualidad", "Deportes"]}
+              - {label: "Fecha", name: "date", widget: "datetime"}
+              - {label: "Foto / Imagen", name: "image", widget: "image", required: false}
+              - {label: "Resumen breve", name: "summary", widget: "text"}
+              - {label: "Contenido completo", name: "body", widget: "markdown"}
