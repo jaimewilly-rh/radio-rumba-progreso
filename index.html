@@ -282,14 +282,20 @@
     const navMenu = document.getElementById('navMenu');
     menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-    // LECTOR AUTOMÁTICO DE NOTICIAS DESDE EL PANEL DE ADMINISTRACIÓN
+    // LECTOR AUTOMÁTICO CON ORDENAMIENTO (DEL MÁS RECIENTE AL MÁS ANTIGUO)
     fetch('content/noticias.json')
       .then(res => res.json())
       .then(data => {
         const contenedor = document.getElementById('contenedorNoticias');
         if (data && data.articulos && data.articulos.length > 0) {
           contenedor.innerHTML = '';
-          data.articulos.forEach(item => {
+
+          // ORDENAR POR FECHA: MÁS RECIENTE PRIMERO
+          const articulosOrdenados = [...data.articulos].sort((a, b) => {
+            return new Date(b.date || 0) - new Date(a.date || 0);
+          });
+
+          articulosOrdenados.forEach(item => {
             const card = document.createElement('article');
             card.className = 'card';
             
