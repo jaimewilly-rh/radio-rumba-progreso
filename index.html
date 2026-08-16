@@ -3,165 +3,503 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Radio Rumba Si Suena - Progreso</title>
-  <meta name="description" content="Radio Rumba Si Suena - Progreso: Emisora musical, informativa, comunitaria y educativa.">
+  <title>Radio Rumba Si Suena - Progreso Asillo | 97.9 FM</title>
+  <meta name="description" content="Radio Rumba Si Suena - Progreso Asillo. Somos Prensa Alternativa: Noticias, música, educación y voz comunitaria.">
+  
+  <!-- Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Fuentes modernas -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --primary: #c9182b;
-      --primary-dark: #8c0c1b;
-      --secondary: #f4a261;
-      --dark: #1a1a1a;
-      --light: #f8f9fa;
-      --gray: #6c757d;
+      --bg-dark: #0a1118;
+      --bg-card: #121e2a;
+      --primary: #e63946;       /* Rojo Rumba */
+      --primary-hover: #d90429;
+      --accent-blue: #00b4d8;   /* Azul Eléctrico */
+      --accent-gold: #ffb703;   /* Amarillo Dorado */
+      --text-main: #f8f9fa;
+      --text-muted: #a0aec0;
       --white: #ffffff;
-      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --font-title: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: var(--font); background-color: var(--light); color: var(--dark); line-height: 1.6; }
+    html { scroll-behavior: smooth; }
 
-    header {
-      background-color: var(--dark);
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(0, 180, 216, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(230, 57, 70, 0.08) 0%, transparent 40%);
+      background-attachment: fixed;
+    }
+
+    /* Barra Superior de Cabina */
+    .top-bar {
+      background: linear-gradient(90deg, #b7094c, #e63946, #b7094c);
       color: var(--white);
+      padding: 0.4rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .top-bar span {
+      color: var(--accent-gold);
+    }
+
+    /* Navegación */
+    header {
+      background: rgba(10, 17, 24, 0.92);
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .nav-container {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 1.5rem;
+      padding: 0.9rem 1.5rem;
     }
 
     .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--white);
-      text-decoration: none;
       display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      background: var(--primary);
+      color: var(--white);
+      font-family: var(--font-title);
+      font-weight: 900;
+      padding: 0.35rem 0.65rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+    }
+
+    .logo-text {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .logo-text span {
+      color: var(--accent-gold);
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.6rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Hero / Portada */
+    .hero {
+      position: relative;
+      padding: 4.5rem 1.5rem 4rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0, 119, 182, 0.15) 0%, rgba(10, 17, 24, 0.95) 100%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .live-tag {
+      display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      background: rgba(230, 57, 70, 0.15);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 0.35rem 1rem;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .logo span { color: var(--secondary); }
-    nav ul { display: flex; list-style: none; gap: 1.5rem; }
-    nav a { color: var(--white); text-decoration: none; font-size: 0.95rem; }
-    nav a:hover { color: var(--secondary); }
+    .live-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--primary);
+      animation: pulse 1.5s infinite;
+    }
 
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), #222;
+    @keyframes pulse {
+      0% { transform: scale(0.9); opacity: 0.7; }
+      50% { transform: scale(1.3); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.7; }
+    }
+
+    .hero h1 {
+      font-family: var(--font-title);
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ffffff, var(--accent-gold), #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-slogan {
+      font-family: var(--font-title);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+      margin-bottom: 1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
       color: var(--white);
+      box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+    }
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-wa {
+      background: #25d366;
+      color: var(--white);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+    }
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    /* Secciones */
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
       text-align: center;
-      padding: 4.5rem 1.5rem;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 2.2rem;
+      position: relative;
     }
 
-    .hero h1 { font-size: 2.3rem; margin-bottom: 1rem; color: var(--secondary); }
-    .hero p { font-size: 1.15rem; margin-bottom: 1.5rem; }
-
-    .badge-container { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; }
-    .badge {
-      background: rgba(255, 255, 255, 0.18);
-      padding: 0.35rem 0.85rem;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+    .section-title span {
+      color: var(--accent-gold);
     }
 
-    section { padding: 3.5rem 1.5rem; max-width: 1100px; margin: auto; }
-    .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 2rem; }
-    .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--primary); margin: 0.5rem auto 0; }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary);
+      margin: 0.6rem auto 0;
+      border-radius: 2px;
+    }
 
+    /* Cuadrícula de Noticias */
     .news-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.8rem;
-    }
-
-    .card {
-      background: var(--white);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #eee;
-    }
-
-    .card img { width: 100%; height: 200px; object-fit: cover; }
-    .card-img-placeholder {
-      background: #e9ecef;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gray);
-      font-weight: 500;
-    }
-
-    .card-body { padding: 1.3rem; flex-grow: 1; display: flex; flex-direction: column; }
-    .card-meta { display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.5rem; }
-    .card-tag { font-weight: 700; color: var(--primary); text-transform: uppercase; }
-    .card-date { color: var(--gray); }
-    .card-title { font-size: 1.18rem; margin-bottom: 0.6rem; line-height: 1.4; color: var(--dark); }
-    .card-text { color: #555; font-size: 0.93rem; margin-bottom: 1rem; flex-grow: 1; }
-
-    .schedule-table-wrapper {
-      background: var(--white);
-      border-radius: 8px;
-      overflow-x: auto;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.06);
-      border: 1px solid #eee;
-    }
-
-    table { width: 100%; border-collapse: collapse; text-align: left; }
-    th, td { padding: 1rem; border-bottom: 1px solid #eee; }
-    th { background-color: var(--dark); color: var(--white); font-weight: 600; }
-
-    .about-box {
-      background: var(--white);
-      padding: 2.2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.06);
-      border: 1px solid #eee;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
     }
 
-    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .contact-item {
-      background: var(--white);
-      padding: 1.8rem 1.5rem;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.06);
-      border: 1px solid #eee;
+    .card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
-    .contact-item h4 { margin-bottom: 0.5rem; color: var(--primary); }
-    .btn-whatsapp {
-      display: inline-block;
-      margin-top: 0.8rem;
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 180, 216, 0.4);
+    }
+
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .card-img-placeholder {
+      background: #1b2838;
+      height: 210px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-blue);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-tag {
+      font-weight: 800;
+      color: var(--accent-gold);
+      background: rgba(255, 183, 3, 0.12);
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      text-transform: uppercase;
+    }
+
+    .card-date {
+      color: var(--text-muted);
+    }
+
+    .card-title {
+      font-family: var(--font-title);
+      font-size: 1.22rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      line-height: 1.4;
+      color: var(--white);
+    }
+
+    .card-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    /* Programación */
+    .schedule-table-wrapper {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow-x: auto;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1.1rem 1.4rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    th {
+      background: #182635;
+      color: var(--accent-gold);
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Sobre Nosotros */
+    .about-box {
+      background: var(--bg-card);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .about-box h3 {
+      font-family: var(--font-title);
+      color: var(--accent-gold);
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+
+    .about-box p {
+      color: var(--text-muted);
+    }
+
+    /* Contacto */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .contact-item {
+      background: var(--bg-card);
+      padding: 2rem 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-item h4 {
+      font-family: var(--font-title);
+      margin-bottom: 0.5rem;
+      color: var(--accent-gold);
+      font-size: 1.15rem;
+    }
+
+    .contact-item p {
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-item strong {
+      color: var(--white);
+      font-size: 1.15rem;
+    }
+
+    /* Botón Flotante de WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
       background-color: #25d366;
       color: var(--white);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      z-index: 9999;
       text-decoration: none;
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.9rem;
+      transition: all 0.3s ease;
     }
 
-    footer { background: var(--dark); color: var(--white); text-align: center; padding: 2.5rem 1.5rem; font-size: 0.9rem; }
-    footer a { color: var(--secondary); text-decoration: none; }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+    }
 
-    .menu-toggle { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+    /* Footer */
+    footer {
+      background: #05090d;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 3rem 1.5rem;
+      font-size: 0.92rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    footer a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Menú móvil */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero-slogan { font-size: 1.1rem; }
       .menu-toggle { display: block; }
       nav ul {
         display: none;
@@ -170,8 +508,9 @@
         position: absolute;
         top: 100%;
         left: 0;
-        background: var(--dark);
-        padding: 1rem 1.5rem;
+        background: #0d1722;
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
       nav ul.active { display: flex; }
     }
@@ -179,14 +518,26 @@
 </head>
 <body>
 
+  <!-- Barra de cabina superior -->
+  <div class="top-bar">
+    🎙️ <span>RADIO RUMBA SI SUENA</span> | PROGRESO - ASILLO | CABINA DIRECTA: <span>950 904 353</span>
+  </div>
+
+  <!-- Navegación -->
   <header>
     <div class="nav-container">
-      <a href="#inicio" class="logo">RADIO RUMBA <span>PROGRESO</span></a>
+      <a href="#inicio" class="logo">
+        <span class="logo-badge">97.9 FM</span>
+        <div class="logo-text">
+          RADIO RUMBA
+          <span>SI SUENA • PROGRESO</span>
+        </div>
+      </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
       <nav>
         <ul id="navMenu">
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#noticias">Noticias y Actualidad</a></li>
+          <li><a href="#noticias">Noticias</a></li>
           <li><a href="#programacion">Programación</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#contacto">Contacto</a></li>
@@ -195,94 +546,140 @@
     </div>
   </header>
 
+  <!-- Portada / Hero con Identidad de Facebook -->
   <section class="hero" id="inicio">
     <div class="hero-content">
-      <h1>Radio Rumba Si Suena - Progreso</h1>
-      <p>La voz de la comunidad: música, noticias de actualidad, cultura y educación para todos.</p>
-      <div class="badge-container">
-        <span class="badge">🎵 Musical</span>
-        <span class="badge">📰 Informativa</span>
-        <span class="badge">🤝 Comunitaria</span>
-        <span class="badge">📚 Educativa</span>
+      <div class="live-tag">
+        <div class="live-dot"></div> AL AIRE • SEÑAL EN VIVO
+      </div>
+      <h1>Radio Rumba Si Suena</h1>
+      <div class="hero-slogan">★ SOMOS PRENSA ALTERNATIVA ★</div>
+      <p>La voz independiente de Progreso y Asillo. Información veraz, cultura, educación y la mejor selección musical para toda nuestra región.</p>
+      
+      <div class="hero-actions">
+        <a href="https://wa.me/51950904353?text=Hola%20Radio%20Rumba%20Si%20Suena%20Progreso" target="_blank" class="btn btn-wa">
+          💬 Escribir al WhatsApp (950 904 353)
+        </a>
+        <a href="#programacion" class="btn btn-primary">
+          📻 Ver Programación
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Sección de Noticias (SE LLENA AUTOMÁTICAMENTE DESDE EL PANEL) -->
+  <!-- Sección de Noticias (AUTOMÁTICA DESDE DECAP CMS) -->
   <section id="noticias">
-    <h2 class="section-title">Noticias y Actualidad</h2>
+    <h2 class="section-title">Noticias y <span>Actualidad</span></h2>
     <div class="news-grid" id="contenedorNoticias">
-      <!-- Cargando contenido automático... -->
+      <!-- Las noticias se cargan automáticamente desde content/noticias.json -->
     </div>
   </section>
 
-  <section id="programacion" style="background-color: #f0f2f5; max-width: 100%; padding-left: 1.5rem; padding-right: 1.5rem;">
-    <div style="max-width: 1100px; margin: auto;">
-      <h2 class="section-title">Parrilla de Programación</h2>
-      <div class="schedule-table-wrapper">
-        <table>
-          <thead>
-            <tr><th>Horario</th><th>Programa</th><th>Tipo</th><th>Detalle</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>06:00 - 08:00</td><td><strong>Amanecer Rumbero</strong></td><td>Musical</td><td>Música para iniciar el día.</td></tr>
-            <tr><td>08:00 - 10:00</td><td><strong>Progreso Informativo</strong></td><td>Noticias</td><td>Actualidad local y regional.</td></tr>
-            <tr><td>10:00 - 12:00</td><td><strong>Aula Abierta</strong></td><td>Educativo</td><td>Espacio formativo y cultural.</td></tr>
-            <tr><td>14:00 - 17:00</td><td><strong>Tarde Rumbera</strong></td><td>Entretenimiento</td><td>Música variada y complacencias.</td></tr>
-            <tr><td>18:00 - 20:00</td><td><strong>Voces de la Comunidad</strong></td><td>Comunitario</td><td>Diálogo ciudadano y entrevistas.</td></tr>
-          </tbody>
-        </table>
-      </div>
+  <!-- Sección de Programación -->
+  <section id="programacion">
+    <h2 class="section-title">Parrilla de <span>Programación</span></h2>
+    <div class="schedule-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Horario</th>
+            <th>Programa</th>
+            <th>Género</th>
+            <th>Detalle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>06:00 - 08:00</td>
+            <td><strong>Amanecer Rumbero</strong></td>
+            <td>Musical / Mañanero</td>
+            <td>La mejor música para empezar el día con energía.</td>
+          </tr>
+          <tr>
+            <td>08:00 - 10:00</td>
+            <td><strong>Prensa Alternativa Informativa</strong></td>
+            <td>Noticias y Actualidad</td>
+            <td>Información sin censura, análisis local, regional y nacional.</td>
+          </tr>
+          <tr>
+            <td>10:00 - 12:00</td>
+            <td><strong>Aula Abierta y Cultura</strong></td>
+            <td>Educativo / Comunitario</td>
+            <td>Espacio de formación, orientación comunal y desarrollo social.</td>
+          </tr>
+          <tr>
+            <td>14:00 - 17:00</td>
+            <td><strong>Tarde Rumbera</strong></td>
+            <td>Música y Complacencias</td>
+            <td>Lo mejor de la música popular y saludos en vivo.</td>
+          </tr>
+          <tr>
+            <td>18:00 - 20:00</td>
+            <td><strong>Voces del Pueblo</strong></td>
+            <td>Diálogo Ciudadano</td>
+            <td>Tribuna libre y participación de las comunidades de Progreso y Asillo.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
+  <!-- Sección Sobre Nosotros -->
   <section id="nosotros">
-    <h2 class="section-title">Sobre Nuestra Emisora</h2>
+    <h2 class="section-title">Sobre <span>Nuestra Emisora</span></h2>
     <div class="about-box">
       <div>
-        <h3>Nuestra Misión</h3>
-        <p><strong>Radio Rumba Si Suena - Progreso</strong> brinda entretenimiento musical, información objetiva y un canal de comunicación para la educación y el desarrollo de nuestra comunidad.</p>
+        <h3>📰 Prensa Alternativa</h3>
+        <p><strong>Radio Rumba Si Suena - Progreso Asillo</strong> es un medio de comunicación independiente comprometido con la verdad, la fiscalización social y la defensa de los intereses de nuestra población.</p>
       </div>
       <div>
-        <h3>Nuestros Pilares</h3>
-        <p>Promovemos la identidad cultural, la convivencia solidaria y el progreso colectivo de toda nuestra audiencia.</p>
+        <h3>🤝 Compromiso con el Sur Andino</h3>
+        <p>Promovemos la educación, el debate constructivo, nuestras tradiciones culturales y la integración de todas las comunidades rurales y urbanas de la provincia y la región.</p>
       </div>
     </div>
   </section>
 
+  <!-- Sección de Contacto -->
   <section id="contacto">
-    <h2 class="section-title">Contacto y Cabina</h2>
+    <h2 class="section-title">Contacto y <span>Cabina en Vivo</span></h2>
     <div class="contact-grid">
       <div class="contact-item">
-        <h4>📞 Teléfono de Cabina</h4>
-        <p>Llamadas al aire</p>
-        <p><strong>+51 900 000 000</strong></p>
+        <h4>📞 Celular de Cabina</h4>
+        <p>Llamadas al aire y denuncias</p>
+        <p><strong>+51 950 904 353</strong></p>
       </div>
       <div class="contact-item">
-        <h4>💬 WhatsApp en Vivo</h4>
-        <p>Envía tus saludos y mensajes</p>
-        <a href="https://wa.me/51900000000?text=Hola%20Radio%20Rumba%20Si%20Suena" target="_blank" class="btn-whatsapp">Escribir al WhatsApp</a>
+        <h4>💬 WhatsApp Comunitario</h4>
+        <p>Mensajes y notas de voz</p>
+        <a href="https://wa.me/51950904353?text=Hola%20Radio%20Rumba%20Si%20Suena%20Progreso" target="_blank" class="btn btn-wa" style="margin-top: 0.5rem;">Escribir a Cabina</a>
       </div>
       <div class="contact-item">
         <h4>📍 Ubicación</h4>
-        <p>Estudios y Cabina Principal</p>
-        <p><strong>Progreso, Perú</strong></p>
+        <p>Estudios Principales</p>
+        <p><strong>Progreso - Asillo, Puno, Perú</strong></p>
       </div>
     </div>
   </section>
 
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/51950904353?text=Hola%20Radio%20Rumba%20Si%20Suena%20Progreso" class="whatsapp-float" target="_blank" aria-label="Escribir por WhatsApp">
+    💬
+  </a>
+
+  <!-- Pie de página -->
   <footer>
-    <p>&copy; 2026 Radio Rumba Si Suena - Progreso. Todos los derechos reservados.</p>
-    <p><a href="/admin/">Acceso al Panel de Administración</a></p>
+    <p>&copy; 2026 Radio Rumba Si Suena - Progreso Asillo. "Somos Prensa Alternativa".</p>
+    <p style="margin-top: 0.5rem;"><a href="/admin/">Acceso al Panel de Administración</a></p>
   </footer>
 
+  <!-- Lector automático de noticias con ordenamiento por fecha -->
   <script>
     // Menú móvil
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-    // LECTOR AUTOMÁTICO CON ORDENAMIENTO (DEL MÁS RECIENTE AL MÁS ANTIGUO)
+    // Carga dinámica de noticias desde content/noticias.json
     fetch('content/noticias.json')
       .then(res => res.json())
       .then(data => {
@@ -290,7 +687,7 @@
         if (data && data.articulos && data.articulos.length > 0) {
           contenedor.innerHTML = '';
 
-          // ORDENAR POR FECHA: MÁS RECIENTE PRIMERO
+          // Ordenar: Más reciente primero
           const articulosOrdenados = [...data.articulos].sort((a, b) => {
             return new Date(b.date || 0) - new Date(a.date || 0);
           });
@@ -303,7 +700,7 @@
             if (item.image) {
               imgHtml = `<img src="${item.image}" referrerpolicy="no-referrer" alt="${item.title}">`;
             } else {
-              imgHtml = `<div class="card-img-placeholder">📻 Radio Rumba</div>`;
+              imgHtml = `<div class="card-img-placeholder">📻 Radio Rumba Si Suena</div>`;
             }
 
             const fecha = item.date ? new Date(item.date).toLocaleDateString('es-PE', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
@@ -312,7 +709,7 @@
               ${imgHtml}
               <div class="card-body">
                 <div class="card-meta">
-                  <span class="card-tag">${item.category || 'Actualidad'}</span>
+                  <span class="card-tag">${item.category || 'Noticias'}</span>
                   <span class="card-date">${fecha}</span>
                 </div>
                 <h3 class="card-title">${item.title}</h3>
@@ -323,7 +720,7 @@
           });
         }
       })
-      .catch(e => console.log('Esperando noticias del panel...'));
+      .catch(e => console.log('Cargando noticias...', e));
 
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
