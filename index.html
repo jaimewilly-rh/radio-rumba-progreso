@@ -108,7 +108,7 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 1.3rem;
+      gap: 1.1rem;
       align-items: center;
     }
 
@@ -116,7 +116,7 @@
       color: var(--text-dark);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       transition: color 0.2s;
     }
 
@@ -226,7 +226,7 @@
     }
     .btn-wa:hover { transform: translateY(-2px); opacity: 0.95; }
 
-    /* Secciones Generales */
+    /* Secciones */
     section {
       padding: 3.8rem 1.5rem;
       max-width: 1200px;
@@ -269,7 +269,7 @@
       border-radius: 2px;
     }
 
-    /* Cuadrículas de Noticias / Tarjetas */
+    /* Cuadrículas de Noticias */
     .news-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -326,8 +326,6 @@
 
     .card-tag {
       font-weight: 800;
-      color: var(--teal);
-      background: #ccfbf1;
       padding: 0.2rem 0.6rem;
       border-radius: 12px;
       text-transform: uppercase;
@@ -336,7 +334,8 @@
     .tag-noticias { color: #0284c7; background: #e0f2fe; }
     .tag-educacion { color: #7c3aed; background: #ede9fe; }
     .tag-cultura { color: #b45309; background: #fef3c7; }
-    .tag-deportes { color: #e11d48; background: #ffe4e6; }
+    .tag-musica { color: #db2777; background: #fce7f3; }
+    .tag-deportes { color: #dc2626; background: #fee2e2; }
 
     .card-date { color: var(--text-muted); }
 
@@ -461,7 +460,7 @@
       cursor: pointer;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       .hero h1 { font-size: 2.1rem; }
       .menu-toggle { display: block; }
       nav ul {
@@ -504,6 +503,7 @@
           <li><a href="#noticias">Noticias</a></li>
           <li><a href="#educacion">Educación</a></li>
           <li><a href="#cultura">Cultura</a></li>
+          <li><a href="#musica">Música</a></li>
           <li><a href="#deportes">Deportes</a></li>
           <li><a href="#programacion">Programación</a></li>
           <li><a href="#contacto">Contacto</a></li>
@@ -520,7 +520,7 @@
       </div>
       <h1>Radio Rumba <span>Si Suena</span></h1>
       <div class="hero-slogan">★ SOMOS PRENSA ALTERNATIVA ★</div>
-      <p>La voz independiente de Progreso y Asillo. Noticias con rigor, educación, identidad cultural y la mejor música para toda nuestra audiencia.</p>
+      <p>La voz independiente de Progreso y Asillo. Noticias con rigor, educación, identidad cultural, la mejor música y toda la pasión deportiva.</p>
       
       <div class="hero-actions">
         <a href="https://wa.me/51950904353?text=Hola%20Radio%20Rumba%20Si%20Suena%20Progreso" target="_blank" class="btn btn-wa">
@@ -561,36 +561,48 @@
     </div>
   </section>
 
-  <!-- SECCIÓN 4: MÚSICA Y DEPORTES -->
-  <div class="section-alt" id="deportes">
+  <!-- SECCIÓN 4: MÚSICA Y ENTRETENIMIENTO -->
+  <div class="section-alt" id="musica">
     <div class="section-alt-inner">
       <section style="padding: 3.8rem 0;">
-        <h2 class="section-title">⚽ Música y <span>Deportes</span></h2>
-        <div class="news-grid" id="contenedorDeportes">
+        <h2 class="section-title">🎵 Música y <span>Entretenimiento</span></h2>
+        <div class="news-grid" id="contenedorMusica">
           <!-- Cargado automáticamente -->
         </div>
       </section>
     </div>
   </div>
 
-  <!-- SECCIÓN DE PROGRAMACIÓN -->
-  <section id="programacion">
-    <h2 class="section-title">Parrilla de <span>Programación</span></h2>
-    <div class="schedule-table-wrapper">
-      <table>
-        <thead>
-          <tr><th>Horario</th><th>Programa</th><th>Género</th><th>Detalle</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>06:00 - 08:00</td><td><strong>Amanecer Rumbero</strong></td><td>Musical / Mañanero</td><td>La mejor selección musical para iniciar el día.</td></tr>
-          <tr><td>08:00 - 10:00</td><td><strong>Prensa Alternativa Informativa</strong></td><td>Noticias y Actualidad</td><td>Información sin censura, análisis local, regional y nacional.</td></tr>
-          <tr><td>10:00 - 12:00</td><td><strong>Aula Abierta</strong></td><td>Educativo y Formativo</td><td>Espacio de orientación ciudadana, salud y aprendizaje.</td></tr>
-          <tr><td>14:00 - 17:00</td><td><strong>Tarde Rumbera</strong></td><td>Música y Complacencias</td><td>Música variada, complacencias y saludos en vivo.</td></tr>
-          <tr><td>18:00 - 20:00</td><td><strong>Voces del Pueblo</strong></td><td>Comunitario y Opinión</td><td>Tribuna libre y diálogo de las comunidades de Progreso y Asillo.</td></tr>
-        </tbody>
-      </table>
+  <!-- SECCIÓN 5: DEPORTES -->
+  <section id="deportes">
+    <h2 class="section-title">⚽ Pasión <span>Deportiva</span></h2>
+    <div class="news-grid" id="contenedorDeportes">
+      <!-- Cargado automáticamente -->
     </div>
   </section>
+
+  <!-- SECCIÓN DE PROGRAMACIÓN -->
+  <div class="section-alt" id="programacion">
+    <div class="section-alt-inner">
+      <section style="padding: 3.8rem 0;">
+        <h2 class="section-title">Parrilla de <span>Programación</span></h2>
+        <div class="schedule-table-wrapper">
+          <table>
+            <thead>
+              <tr><th>Horario</th><th>Programa</th><th>Género</th><th>Detalle</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>06:00 - 08:00</td><td><strong>Amanecer Rumbero</strong></td><td>Musical / Mañanero</td><td>La mejor selección musical para iniciar el día.</td></tr>
+              <tr><td>08:00 - 10:00</td><td><strong>Prensa Alternativa Informativa</strong></td><td>Noticias y Actualidad</td><td>Información sin censura, análisis local, regional y nacional.</td></tr>
+              <tr><td>10:00 - 12:00</td><td><strong>Aula Abierta</strong></td><td>Educativo y Formativo</td><td>Espacio de orientación ciudadana, salud y aprendizaje.</td></tr>
+              <tr><td>14:00 - 17:00</td><td><strong>Tarde Rumbera</strong></td><td>Música y Complacencias</td><td>Música variada, complacencias y saludos en vivo.</td></tr>
+              <tr><td>18:00 - 20:00</td><td><strong>Voces del Pueblo</strong></td><td>Comunitario y Opinión</td><td>Tribuna libre y diálogo de las comunidades de Progreso y Asillo.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
 
   <!-- SECCIÓN SOBRE NOSOTROS -->
   <section id="nosotros">
@@ -608,26 +620,30 @@
   </section>
 
   <!-- SECCIÓN CONTACTO -->
-  <section id="contacto">
-    <h2 class="section-title">Contacto y <span>Cabina en Vivo</span></h2>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <h4>📞 Celular de Cabina</h4>
-        <p>Llamadas al aire y denuncias</p>
-        <p><strong>+51 950 904 353</strong></p>
-      </div>
-      <div class="contact-item">
-        <h4>💬 WhatsApp Oficial</h4>
-        <p>Mensajes de texto y audios</p>
-        <a href="https://wa.me/51950904353?text=Hola%20Radio%20Rumba%20Si%20Suena%20Progreso" target="_blank" class="btn btn-wa" style="margin-top: 0.5rem;">Escribir a Cabina</a>
-      </div>
-      <div class="contact-item">
-        <h4>📍 Ubicación</h4>
-        <p>Estudios y Cabina Principal</p>
-        <p><strong>Progreso - Asillo, Puno, Perú</strong></p>
-      </div>
+  <div class="section-alt" id="contacto">
+    <div class="section-alt-inner">
+      <section style="padding: 3.8rem 0;">
+        <h2 class="section-title">Contacto y <span>Cabina en Vivo</span></h2>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <h4>📞 Celular de Cabina</h4>
+            <p>Llamadas al aire y denuncias</p>
+            <p><strong>+51 950 904 353</strong></p>
+          </div>
+          <div class="contact-item">
+            <h4>💬 WhatsApp Oficial</h4>
+            <p>Mensajes de texto y audios</p>
+            <a href="https://wa.me/51950904353?text=Hola%20Radio%20Rumba%20Si%20Suena%20Progreso" target="_blank" class="btn btn-wa" style="margin-top: 0.5rem;">Escribir a Cabina</a>
+          </div>
+          <div class="contact-item">
+            <h4>📍 Ubicación</h4>
+            <p>Estudios y Cabina Principal</p>
+            <p><strong>Progreso - Asillo, Puno, Perú</strong></p>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
 
   <!-- Botón Flotante WhatsApp -->
   <a href="https://wa.me/51950904353?text=Hola%20Radio%20Rumba%20Si%20Suena%20Progreso" class="whatsapp-float" target="_blank" aria-label="Escribir por WhatsApp">
@@ -640,7 +656,7 @@
     <p style="margin-top: 0.5rem;"><a href="/admin/">Acceso al Panel de Administración</a></p>
   </footer>
 
-  <!-- LECTOR AUTOMÁTICO CLASIFICADO POR 4 SECCIONES -->
+  <!-- LECTOR AUTOMÁTICO CLASIFICADO EN 5 SECCIONES -->
   <script>
     // Menú móvil
     const menuToggle = document.getElementById('menuToggle');
@@ -675,7 +691,7 @@
       return card;
     }
 
-    // Carga y distribución inteligente de noticias
+    // Carga y distribución en las 5 secciones
     fetch('content/noticias.json')
       .then(res => res.json())
       .then(data => {
@@ -683,11 +699,13 @@
           const cNoticias = document.getElementById('contenedorNoticias');
           const cEducacion = document.getElementById('contenedorEducacion');
           const cCultura = document.getElementById('contenedorCultura');
+          const cMusica = document.getElementById('contenedorMusica');
           const cDeportes = document.getElementById('contenedorDeportes');
 
           cNoticias.innerHTML = '';
           cEducacion.innerHTML = '';
           cCultura.innerHTML = '';
+          cMusica.innerHTML = '';
           cDeportes.innerHTML = '';
 
           // Ordenar por fecha más reciente
@@ -700,7 +718,9 @@
               cEducacion.appendChild(crearTarjetaHTML(item, 'tag-educacion'));
             } else if (cat.includes('cultur') || cat.includes('tradici')) {
               cCultura.appendChild(crearTarjetaHTML(item, 'tag-cultura'));
-            } else if (cat.includes('depor') || cat.includes('músic') || cat.includes('music')) {
+            } else if (cat.includes('músic') || cat.includes('music') || cat.includes('entretenimiento')) {
+              cMusica.appendChild(crearTarjetaHTML(item, 'tag-musica'));
+            } else if (cat.includes('depor') || cat.includes('futbol') || cat.includes('fútbol')) {
               cDeportes.appendChild(crearTarjetaHTML(item, 'tag-deportes'));
             } else {
               // Por defecto: Noticias / Actualidad / Comunidad
@@ -708,15 +728,18 @@
             }
           });
 
-          // Si alguna sección no tiene noticias aún, mostrar una tarjeta informativa inicial
+          // Tarjetas informativas de respaldo si alguna sección aún no tiene publicaciones
           if (cEducacion.children.length === 0) {
-            cEducacion.innerHTML = `<article class="card"><div class="card-img-placeholder">📚 Formación Continua</div><div class="card-body"><span class="card-tag tag-educacion">Educación</span><h3 class="card-title">Espacios educativos y formativos al aire</h3><p class="card-text">Pronto compartiremos novedades sobre cursos, talleres y orientación para escolares y jóvenes de Progreso.</p></div></article>`;
+            cEducacion.innerHTML = `<article class="card"><div class="card-img-placeholder">📚 Formación y Talleres</div><div class="card-body"><span class="card-tag tag-educacion">Educación</span><h3 class="card-title">Espacios educativos y formativos al aire</h3><p class="card-text">Novedades sobre cursos, talleres y orientación para escolares y jóvenes de Progreso y Asillo.</p></div></article>`;
           }
           if (cCultura.children.length === 0) {
-            cCultura.innerHTML = `<article class="card"><div class="card-img-placeholder">🎭 Tradiciones Puneñas</div><div class="card-body"><span class="card-tag tag-cultura">Cultura</span><h3 class="card-title">Promoviendo la identidad y el folclor del sur andino</h3><p class="card-text">Difusión de nuestras festividades, danzas y costumbres comunitarias.</p></div></article>`;
+            cCultura.innerHTML = `<article class="card"><div class="card-img-placeholder">🎭 Tradiciones y Folclor</div><div class="card-body"><span class="card-tag tag-cultura">Cultura</span><h3 class="card-title">Promoviendo la identidad del sur andino</h3><p class="card-text">Difusión de nuestras festividades patronales, danzas, historia y costumbres comunitarias.</p></div></article>`;
+          }
+          if (cMusica.children.length === 0) {
+            cMusica.innerHTML = `<article class="card"><div class="card-img-placeholder">🎵 Éxitos Rumberos</div><div class="card-body"><span class="card-tag tag-musica">Música</span><h3 class="card-title">Ranking musical y los mejores éxitos</h3><p class="card-text">Lo más sonado en cumbia, folclor contemporáneo y complacencias para nuestra audiencia.</p></div></article>`;
           }
           if (cDeportes.children.length === 0) {
-            cDeportes.innerHTML = `<article class="card"><div class="card-img-placeholder">⚽ Pasión Deportiva</div><div class="card-body"><span class="card-tag tag-deportes">Deportes</span><h3 class="card-title">Bloque deportivo y éxitos musicales</h3><p class="card-text">Siga el minuto a minuto del fútbol regional, la Liga 1 y la mejor selección rumbera.</p></div></article>`;
+            cDeportes.innerHTML = `<article class="card"><div class="card-img-placeholder">⚽ Pasión Deportiva</div><div class="card-body"><span class="card-tag tag-deportes">Deportes</span><h3 class="card-title">Fútbol local, regional y Liga 1</h3><p class="card-text">Seguimiento a los campeonatos de Progreso, la Copa Perú y el acontecer deportivo nacional.</p></div></article>`;
           }
         }
       })
