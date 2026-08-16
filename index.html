@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Radio Rumba Si Suena - Progreso</title>
   <meta name="description" content="Radio Rumba Si Suena - Progreso: Emisora musical, informativa, comunitaria y educativa.">
-  
-  <!-- Widget de autenticación de Netlify -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
   <style>
@@ -21,20 +19,9 @@
       --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background-color: var(--light); color: var(--dark); line-height: 1.6; }
 
-    body {
-      font-family: var(--font);
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-    }
-
-    /* Navegación */
     header {
       background-color: var(--dark);
       color: var(--white);
@@ -63,28 +50,11 @@
       gap: 0.5rem;
     }
 
-    .logo span {
-      color: var(--secondary);
-    }
+    .logo span { color: var(--secondary); }
+    nav ul { display: flex; list-style: none; gap: 1.5rem; }
+    nav a { color: var(--white); text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { color: var(--secondary); }
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--secondary);
-    }
-
-    /* Portada / Hero */
     .hero {
       background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), #222;
       color: var(--white);
@@ -92,29 +62,10 @@
       padding: 4.5rem 1.5rem;
     }
 
-    .hero-content {
-      max-width: 800px;
-      margin: auto;
-    }
+    .hero h1 { font-size: 2.3rem; margin-bottom: 1rem; color: var(--secondary); }
+    .hero p { font-size: 1.15rem; margin-bottom: 1.5rem; }
 
-    .hero h1 {
-      font-size: 2.3rem;
-      margin-bottom: 1rem;
-      color: var(--secondary);
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .badge-container {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
+    .badge-container { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; }
     .badge {
       background: rgba(255, 255, 255, 0.18);
       padding: 0.35rem 0.85rem;
@@ -123,30 +74,10 @@
       border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
-    /* Secciones */
-    section {
-      padding: 3.5rem 1.5rem;
-      max-width: 1100px;
-      margin: auto;
-    }
+    section { padding: 3.5rem 1.5rem; max-width: 1100px; margin: auto; }
+    .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 2rem; }
+    .section-title::after { content: ''; display: block; width: 50px; height: 3px; background: var(--primary); margin: 0.5rem auto 0; }
 
-    .section-title {
-      text-align: center;
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      position: relative;
-    }
-
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: var(--primary);
-      margin: 0.5rem auto 0;
-    }
-
-    /* Cuadrícula de Noticias */
     .news-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -161,19 +92,9 @@
       display: flex;
       flex-direction: column;
       border: 1px solid #eee;
-      transition: transform 0.2s ease;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
+    .card img { width: 100%; height: 200px; object-fit: cover; }
     .card-img-placeholder {
       background: #e9ecef;
       height: 200px;
@@ -181,49 +102,16 @@
       align-items: center;
       justify-content: center;
       color: var(--gray);
-      font-size: 0.95rem;
       font-weight: 500;
     }
 
-    .card-body {
-      padding: 1.3rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-    }
+    .card-body { padding: 1.3rem; flex-grow: 1; display: flex; flex-direction: column; }
+    .card-meta { display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.5rem; }
+    .card-tag { font-weight: 700; color: var(--primary); text-transform: uppercase; }
+    .card-date { color: var(--gray); }
+    .card-title { font-size: 1.18rem; margin-bottom: 0.6rem; line-height: 1.4; color: var(--dark); }
+    .card-text { color: #555; font-size: 0.93rem; margin-bottom: 1rem; flex-grow: 1; }
 
-    .card-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-tag {
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-    }
-
-    .card-date {
-      color: var(--gray);
-    }
-
-    .card-title {
-      font-size: 1.18rem;
-      margin-bottom: 0.6rem;
-      line-height: 1.4;
-      color: var(--dark);
-    }
-
-    .card-text {
-      color: #555;
-      font-size: 0.93rem;
-      margin-bottom: 1rem;
-      flex-grow: 1;
-    }
-
-    /* Programación */
     .schedule-table-wrapper {
       background: var(--white);
       border-radius: 8px;
@@ -232,28 +120,10 @@
       border: 1px solid #eee;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { padding: 1rem; border-bottom: 1px solid #eee; }
+    th { background-color: var(--dark); color: var(--white); font-weight: 600; }
 
-    th, td {
-      padding: 1rem;
-      border-bottom: 1px solid #eee;
-    }
-
-    th {
-      background-color: var(--dark);
-      color: var(--white);
-      font-weight: 600;
-    }
-
-    tr:hover {
-      background-color: #fdfdfd;
-    }
-
-    /* Sobre Nosotros */
     .about-box {
       background: var(--white);
       padding: 2.2rem;
@@ -265,13 +135,7 @@
       gap: 2rem;
     }
 
-    /* Contacto */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
     .contact-item {
       background: var(--white);
       padding: 1.8rem 1.5rem;
@@ -280,12 +144,7 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.06);
       border: 1px solid #eee;
     }
-
-    .contact-item h4 {
-      margin-bottom: 0.5rem;
-      color: var(--primary);
-    }
-
+    .contact-item h4 { margin-bottom: 0.5rem; color: var(--primary); }
     .btn-whatsapp {
       display: inline-block;
       margin-top: 0.8rem;
@@ -298,38 +157,12 @@
       font-size: 0.9rem;
     }
 
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: var(--white);
-      text-align: center;
-      padding: 2.5rem 1.5rem;
-      font-size: 0.9rem;
-    }
+    footer { background: var(--dark); color: var(--white); text-align: center; padding: 2.5rem 1.5rem; font-size: 0.9rem; }
+    footer a { color: var(--secondary); text-decoration: none; }
 
-    footer p {
-      color: #aaa;
-    }
-
-    footer a {
-      color: var(--secondary);
-      text-decoration: none;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--white);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
+    .menu-toggle { display: none; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-
+      .menu-toggle { display: block; }
       nav ul {
         display: none;
         flex-direction: column;
@@ -339,18 +172,13 @@
         left: 0;
         background: var(--dark);
         padding: 1rem 1.5rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.25);
       }
-
-      nav ul.active {
-        display: flex;
-      }
+      nav ul.active { display: flex; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navegación -->
   <header>
     <div class="nav-container">
       <a href="#inicio" class="logo">RADIO RUMBA <span>PROGRESO</span></a>
@@ -367,7 +195,6 @@
     </div>
   </header>
 
-  <!-- Portada / Hero -->
   <section class="hero" id="inicio">
     <div class="hero-content">
       <h1>Radio Rumba Si Suena - Progreso</h1>
@@ -381,131 +208,59 @@
     </div>
   </section>
 
-  <!-- Sección de Noticias y Actualidad -->
+  <!-- Sección de Noticias (SE LLENA AUTOMÁTICAMENTE DESDE EL PANEL) -->
   <section id="noticias">
     <h2 class="section-title">Noticias y Actualidad</h2>
-    <div class="news-grid">
-      
-      <!-- Noticia Principal Publicada con Foto -->
-      <article class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Palacio_de_Gobierno_del_Per%C3%BA.jpg/1280px-Palacio_de_Gobierno_del_Per%C3%BA.jpg" alt="Palacio de Gobierno">
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-tag">Comunidad / Estado</span>
-            <span class="card-date">16 Ago 2026</span>
-          </div>
-          <h3 class="card-title">Gobierno articula medidas prioritarias en programas sociales, salud e infraestructura en regiones</h3>
-          <p class="card-text">El Ejecutivo refuerza la atención a poblaciones vulnerables, transferencias para servicios básicos de agua potable y el seguimiento a obras públicas en el interior del país.</p>
-        </div>
-      </article>
-
-      <!-- Noticia 2: PROINVERSIÓN Puno -->
-      <article class="card">
-        <div class="card-img-placeholder">🏛️ Inversión Regional</div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-tag">Región Puno</span>
-            <span class="card-date">16 Ago 2026</span>
-          </div>
-          <h3 class="card-title">PROINVERSIÓN y el Estado impulsan proyectos por más de S/ 2,700 millones para Puno</h3>
-          <p class="card-text">Se promueven iniciativas de Obras por Impuestos y Asociaciones Público-Privadas en salud, educación, transporte y logística comercial.</p>
-        </div>
-      </article>
-
-      <!-- Noticia 3: Comunidad -->
-      <article class="card">
-        <div class="card-img-placeholder">📻 Progreso Local</div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="card-tag">Comunidad</span>
-            <span class="card-date">16 Ago 2026</span>
-          </div>
-          <h3 class="card-title">Jornada de participación ciudadana y talleres formativos en Progreso</h3>
-          <p class="card-text">Vecinos y organizaciones locales coordinan actividades educativas y de integración comunal a través de los micrófonos de la emisora.</p>
-        </div>
-      </article>
-
+    <div class="news-grid" id="contenedorNoticias">
+      <!-- Cargando contenido automático... -->
     </div>
   </section>
 
-  <!-- Sección de Programación -->
   <section id="programacion" style="background-color: #f0f2f5; max-width: 100%; padding-left: 1.5rem; padding-right: 1.5rem;">
     <div style="max-width: 1100px; margin: auto;">
       <h2 class="section-title">Parrilla de Programación</h2>
       <div class="schedule-table-wrapper">
         <table>
           <thead>
-            <tr>
-              <th>Horario</th>
-              <th>Programa</th>
-              <th>Tipo</th>
-              <th>Detalle</th>
-            </tr>
+            <tr><th>Horario</th><th>Programa</th><th>Tipo</th><th>Detalle</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td>06:00 - 08:00</td>
-              <td><strong>Amanecer Rumbero</strong></td>
-              <td>Musical / Mañanero</td>
-              <td>Música seleccionada para iniciar el día.</td>
-            </tr>
-            <tr>
-              <td>08:00 - 10:00</td>
-              <td><strong>Progreso Informativo</strong></td>
-              <td>Noticias y Actualidad</td>
-              <td>Noticias locales, regionales y participación vecinal.</td>
-            </tr>
-            <tr>
-              <td>10:00 - 12:00</td>
-              <td><strong>Aula Abierta</strong></td>
-              <td>Educativo / Cultural</td>
-              <td>Temas formativos, orientación social y aprendizaje en familia.</td>
-            </tr>
-            <tr>
-              <td>14:00 - 17:00</td>
-              <td><strong>Tarde Rumbera</strong></td>
-              <td>Música y Entretenimiento</td>
-              <td>Música variada y mensajes de la audiencia.</td>
-            </tr>
-            <tr>
-              <td>18:00 - 20:00</td>
-              <td><strong>Voces de la Comunidad</strong></td>
-              <td>Comunitario y Opinión</td>
-              <td>Espacio de diálogo, análisis local y entrevistas.</td>
-            </tr>
+            <tr><td>06:00 - 08:00</td><td><strong>Amanecer Rumbero</strong></td><td>Musical</td><td>Música para iniciar el día.</td></tr>
+            <tr><td>08:00 - 10:00</td><td><strong>Progreso Informativo</strong></td><td>Noticias</td><td>Actualidad local y regional.</td></tr>
+            <tr><td>10:00 - 12:00</td><td><strong>Aula Abierta</strong></td><td>Educativo</td><td>Espacio formativo y cultural.</td></tr>
+            <tr><td>14:00 - 17:00</td><td><strong>Tarde Rumbera</strong></td><td>Entretenimiento</td><td>Música variada y complacencias.</td></tr>
+            <tr><td>18:00 - 20:00</td><td><strong>Voces de la Comunidad</strong></td><td>Comunitario</td><td>Diálogo ciudadano y entrevistas.</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <!-- Sección Sobre Nosotros -->
   <section id="nosotros">
     <h2 class="section-title">Sobre Nuestra Emisora</h2>
     <div class="about-box">
       <div>
         <h3>Nuestra Misión</h3>
-        <p><strong>Radio Rumba Si Suena - Progreso</strong> brinda entretenimiento musical de calidad, información objetiva y un canal de comunicación abierto para la educación y el desarrollo de nuestra comunidad.</p>
+        <p><strong>Radio Rumba Si Suena - Progreso</strong> brinda entretenimiento musical, información objetiva y un canal de comunicación para la educación y el desarrollo de nuestra comunidad.</p>
       </div>
       <div>
         <h3>Nuestros Pilares</h3>
-        <p>Promovemos la identidad cultural, la convivencia solidaria y el acceso a contenidos que orienten y fortalezcan el progreso colectivo de nuestros oyentes.</p>
+        <p>Promovemos la identidad cultural, la convivencia solidaria y el progreso colectivo de toda nuestra audiencia.</p>
       </div>
     </div>
   </section>
 
-  <!-- Sección Contacto -->
   <section id="contacto">
     <h2 class="section-title">Contacto y Cabina</h2>
     <div class="contact-grid">
       <div class="contact-item">
         <h4>📞 Teléfono de Cabina</h4>
-        <p>Llamadas al aire y saludos</p>
+        <p>Llamadas al aire</p>
         <p><strong>+51 900 000 000</strong></p>
       </div>
       <div class="contact-item">
         <h4>💬 WhatsApp en Vivo</h4>
-        <p>Envía tus mensajes y notas de voz</p>
+        <p>Envía tus saludos y mensajes</p>
         <a href="https://wa.me/51900000000?text=Hola%20Radio%20Rumba%20Si%20Suena" target="_blank" class="btn-whatsapp">Escribir al WhatsApp</a>
       </div>
       <div class="contact-item">
@@ -516,36 +271,57 @@
     </div>
   </section>
 
-  <!-- Pie de página -->
   <footer>
     <p>&copy; 2026 Radio Rumba Si Suena - Progreso. Todos los derechos reservados.</p>
     <p><a href="/admin/">Acceso al Panel de Administración</a></p>
   </footer>
 
-  <!-- Scripts -->
   <script>
     // Menú móvil
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
+    menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
+    // LECTOR AUTOMÁTICO DE NOTICIAS DESDE EL PANEL DE ADMINISTRACIÓN
+    fetch('content/noticias.json')
+      .then(res => res.json())
+      .then(data => {
+        const contenedor = document.getElementById('contenedorNoticias');
+        if (data && data.articulos && data.articulos.length > 0) {
+          contenedor.innerHTML = '';
+          data.articulos.forEach(item => {
+            const card = document.createElement('article');
+            card.className = 'card';
+            
+            let imgHtml = '';
+            if (item.image) {
+              imgHtml = `<img src="${item.image}" referrerpolicy="no-referrer" alt="${item.title}">`;
+            } else {
+              imgHtml = `<div class="card-img-placeholder">📻 Radio Rumba</div>`;
+            }
 
-    document.querySelectorAll('#navMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-      });
-    });
+            const fecha = item.date ? new Date(item.date).toLocaleDateString('es-PE', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
 
-    // Redirección de Netlify Identity
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
+            card.innerHTML = `
+              ${imgHtml}
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="card-tag">${item.category || 'Actualidad'}</span>
+                  <span class="card-date">${fecha}</span>
+                </div>
+                <h3 class="card-title">${item.title}</h3>
+                <p class="card-text">${item.summary || ''}</p>
+              </div>
+            `;
+            contenedor.appendChild(card);
           });
         }
+      })
+      .catch(e => console.log('Esperando noticias del panel...'));
+
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) window.netlifyIdentity.on("login", () => document.location.href = "/admin/");
       });
     }
   </script>
