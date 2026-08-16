@@ -11,9 +11,9 @@
 
   <style>
     :root {
-      --primary: #c9182b;       /* Rojo vibrante */
+      --primary: #c9182b;
       --primary-dark: #8c0c1b;
-      --secondary: #f4a261;     /* Acento cálido */
+      --secondary: #f4a261;
       --dark: #1a1a1a;
       --light: #f8f9fa;
       --gray: #6c757d;
@@ -84,7 +84,7 @@
       color: var(--secondary);
     }
 
-    /* Hero / Portada */
+    /* Portada / Hero */
     .hero {
       background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), #222;
       color: var(--white);
@@ -123,7 +123,7 @@
       border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
-    /* Secciones generales */
+    /* Secciones */
     section {
       padding: 3.5rem 1.5rem;
       max-width: 1100px;
@@ -146,58 +146,79 @@
       margin: 0.5rem auto 0;
     }
 
-    /* Cuadrícula de Noticias y Actualidad */
+    /* Cuadrícula de Noticias */
     .news-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
     }
 
     .card {
       background: var(--white);
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
       display: flex;
       flex-direction: column;
       border: 1px solid #eee;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
     }
 
     .card-img-placeholder {
       background: #e9ecef;
-      height: 170px;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--gray);
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 500;
     }
 
     .card-body {
-      padding: 1.25rem;
+      padding: 1.3rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
     }
 
-    .card-tag {
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
       font-size: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-tag {
       font-weight: 700;
       color: var(--primary);
       text-transform: uppercase;
-      margin-bottom: 0.4rem;
+    }
+
+    .card-date {
+      color: var(--gray);
     }
 
     .card-title {
-      font-size: 1.15rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.18rem;
+      margin-bottom: 0.6rem;
       line-height: 1.4;
+      color: var(--dark);
     }
 
     .card-text {
       color: #555;
-      font-size: 0.92rem;
+      font-size: 0.93rem;
       margin-bottom: 1rem;
       flex-grow: 1;
     }
@@ -271,15 +292,10 @@
       background-color: #25d366;
       color: var(--white);
       text-decoration: none;
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 20px;
       font-weight: 600;
       font-size: 0.9rem;
-      transition: opacity 0.3s;
-    }
-
-    .btn-whatsapp:hover {
-      opacity: 0.9;
     }
 
     /* Footer */
@@ -300,7 +316,6 @@
       text-decoration: none;
     }
 
-    /* Menú móvil */
     .menu-toggle {
       display: none;
       background: none;
@@ -343,8 +358,7 @@
       <nav>
         <ul id="navMenu">
           <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#noticias">Noticias</a></li>
-          <li><a href="#actualidad">Actualidad</a></li>
+          <li><a href="#noticias">Noticias y Actualidad</a></li>
           <li><a href="#programacion">Programación</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#contacto">Contacto</a></li>
@@ -367,134 +381,105 @@
     </div>
   </section>
 
-  <!-- Sección 1: Noticias Comunitarias y Locales -->
+  <!-- Sección de Noticias y Actualidad -->
   <section id="noticias">
-    <h2 class="section-title">Noticias y Comunidad</h2>
+    <h2 class="section-title">Noticias y Actualidad</h2>
     <div class="news-grid">
       
-      <!-- Noticia 1 -->
+      <!-- Noticia Principal Publicada con Foto -->
       <article class="card">
-        <div class="card-img-placeholder">📻 Radio y Comunidad</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Palacio_de_Gobierno_del_Per%C3%BA.jpg/1280px-Palacio_de_Gobierno_del_Per%C3%BA.jpg" alt="Palacio de Gobierno">
         <div class="card-body">
-          <span class="card-tag">Comunidad</span>
-          <h3 class="card-title">Jornada de participación ciudadana en Progreso</h3>
-          <p class="card-text">Vecinos y organizaciones locales se reúnen para coordinar actividades formativas, de integración y apoyo social.</p>
+          <div class="card-meta">
+            <span class="card-tag">Comunidad / Estado</span>
+            <span class="card-date">16 Ago 2026</span>
+          </div>
+          <h3 class="card-title">Gobierno articula medidas prioritarias en programas sociales, salud e infraestructura en regiones</h3>
+          <p class="card-text">El Ejecutivo refuerza la atención a poblaciones vulnerables, transferencias para servicios básicos de agua potable y el seguimiento a obras públicas en el interior del país.</p>
         </div>
       </article>
 
-      <!-- Noticia 2 -->
+      <!-- Noticia 2: PROINVERSIÓN Puno -->
       <article class="card">
-        <div class="card-img-placeholder">📚 Formación Juvenil</div>
+        <div class="card-img-placeholder">🏛️ Inversión Regional</div>
         <div class="card-body">
-          <span class="card-tag">Educación</span>
-          <h3 class="card-title">Talleres educativos y culturales al aire</h3>
-          <p class="card-text">Conozca los nuevos espacios de orientación y aprendizaje que transmitirá la emisora para jóvenes y escolares.</p>
+          <div class="card-meta">
+            <span class="card-tag">Región Puno</span>
+            <span class="card-date">16 Ago 2026</span>
+          </div>
+          <h3 class="card-title">PROINVERSIÓN y el Estado impulsan proyectos por más de S/ 2,700 millones para Puno</h3>
+          <p class="card-text">Se promueven iniciativas de Obras por Impuestos y Asociaciones Público-Privadas en salud, educación, transporte y logística comercial.</p>
         </div>
       </article>
 
-      <!-- Noticia 3 -->
+      <!-- Noticia 3: Comunidad -->
       <article class="card">
-        <div class="card-img-placeholder">🎵 Cultura Popular</div>
+        <div class="card-img-placeholder">📻 Progreso Local</div>
         <div class="card-body">
-          <span class="card-tag">Cultura</span>
-          <h3 class="card-title">Especial musical: Ritmos de nuestra tierra</h3>
-          <p class="card-text">Un recorrido por las tradiciones sonoras del sur andino y la mejor música popular de nuestra audiencia.</p>
+          <div class="card-meta">
+            <span class="card-tag">Comunidad</span>
+            <span class="card-date">16 Ago 2026</span>
+          </div>
+          <h3 class="card-title">Jornada de participación ciudadana y talleres formativos en Progreso</h3>
+          <p class="card-text">Vecinos y organizaciones locales coordinan actividades educativas y de integración comunal a través de los micrófonos de la emisora.</p>
         </div>
       </article>
 
     </div>
   </section>
 
-  <!-- Sección 2: Actualidad Regional y Nacional -->
-  <section id="actualidad" style="background-color: #f0f2f5; max-width: 100%; padding-left: 1.5rem; padding-right: 1.5rem;">
+  <!-- Sección de Programación -->
+  <section id="programacion" style="background-color: #f0f2f5; max-width: 100%; padding-left: 1.5rem; padding-right: 1.5rem;">
     <div style="max-width: 1100px; margin: auto;">
-      <h2 class="section-title">Actualidad y Desarrollo Regional</h2>
-      <div class="news-grid">
-        
-        <!-- Noticia Real: PROINVERSIÓN y Puno -->
-        <article class="card">
-          <div class="card-img-placeholder">🏛️ Inversión Pública</div>
-          <div class="card-body">
-            <span class="card-tag">Región Puno</span>
-            <h3 class="card-title">PROINVERSIÓN y el Gobierno impulsan proyectos por más de S/ 2,700 millones para Puno</h3>
-            <p class="card-text">El Estado promueve proyectos de Obras por Impuestos y Asociaciones Público-Privadas para cerrar brechas en salud, educación, transporte y conectividad en la región.</p>
-          </div>
-        </article>
-
-        <!-- Noticia de Infraestructura -->
-        <article class="card">
-          <div class="card-img-placeholder">🛣️ Vías y Transporte</div>
-          <div class="card-body">
-            <span class="card-tag">Infraestructura</span>
-            <h3 class="card-title">Seguimiento a proyectos viales y conectividad del sur andino</h3>
-            <p class="card-text">Autoridades locales y regionales supervisan los tramos de integración vial que dinamizarán el comercio y la movilidad de nuestras provincias.</p>
-          </div>
-        </article>
-
-        <!-- Comunicado Oficial -->
-        <article class="card">
-          <div class="card-img-placeholder">📢 Comunicado Oficial</div>
-          <div class="card-body">
-            <span class="card-tag">Avisos</span>
-            <h3 class="card-title">Espacio informativo abierto a instituciones públicas</h3>
-            <p class="card-text">Radio Rumba pone a disposición sus micrófonos para la difusión de campañas de salud, prevención climática y comunicados comunitarios.</p>
-          </div>
-        </article>
-
+      <h2 class="section-title">Parrilla de Programación</h2>
+      <div class="schedule-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Horario</th>
+              <th>Programa</th>
+              <th>Tipo</th>
+              <th>Detalle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>06:00 - 08:00</td>
+              <td><strong>Amanecer Rumbero</strong></td>
+              <td>Musical / Mañanero</td>
+              <td>Música seleccionada para iniciar el día.</td>
+            </tr>
+            <tr>
+              <td>08:00 - 10:00</td>
+              <td><strong>Progreso Informativo</strong></td>
+              <td>Noticias y Actualidad</td>
+              <td>Noticias locales, regionales y participación vecinal.</td>
+            </tr>
+            <tr>
+              <td>10:00 - 12:00</td>
+              <td><strong>Aula Abierta</strong></td>
+              <td>Educativo / Cultural</td>
+              <td>Temas formativos, orientación social y aprendizaje en familia.</td>
+            </tr>
+            <tr>
+              <td>14:00 - 17:00</td>
+              <td><strong>Tarde Rumbera</strong></td>
+              <td>Música y Entretenimiento</td>
+              <td>Música variada y mensajes de la audiencia.</td>
+            </tr>
+            <tr>
+              <td>18:00 - 20:00</td>
+              <td><strong>Voces de la Comunidad</strong></td>
+              <td>Comunitario y Opinión</td>
+              <td>Espacio de diálogo, análisis local y entrevistas.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- Sección 3: Programación -->
-  <section id="programacion">
-    <h2 class="section-title">Parrilla de Programación</h2>
-    <div class="schedule-table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th>Horario</th>
-            <th>Programa</th>
-            <th>Tipo</th>
-            <th>Detalle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>06:00 - 08:00</td>
-            <td><strong>Amanecer Rumbero</strong></td>
-            <td>Musical / Mañanero</td>
-            <td>Música seleccionada para iniciar la jornada laboral.</td>
-          </tr>
-          <tr>
-            <td>08:00 - 10:00</td>
-            <td><strong>Progreso Informativo</strong></td>
-            <td>Noticias y Actualidad</td>
-            <td>Noticias locales, regionales y participación vecinal.</td>
-          </tr>
-          <tr>
-            <td>10:00 - 12:00</td>
-            <td><strong>Aula Abierta</strong></td>
-            <td>Educativo / Cultural</td>
-            <td>Temas formativos, orientación social y aprendizaje en familia.</td>
-          </tr>
-          <tr>
-            <td>14:00 - 17:00</td>
-            <td><strong>Tarde Rumbera</strong></td>
-            <td>Música y Entretenimiento</td>
-            <td>Música variada y complacencias para los oyentes.</td>
-          </tr>
-          <tr>
-            <td>18:00 - 20:00</td>
-            <td><strong>Voces de la Comunidad</strong></td>
-            <td>Comunitario y Opinión</td>
-            <td>Espacio de diálogo, análisis local y entrevistas.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- Sección 4: Sobre Nosotros -->
+  <!-- Sección Sobre Nosotros -->
   <section id="nosotros">
     <h2 class="section-title">Sobre Nuestra Emisora</h2>
     <div class="about-box">
@@ -504,12 +489,12 @@
       </div>
       <div>
         <h3>Nuestros Pilares</h3>
-        <p>Promovemos la identidad cultural, la convivencia solidaria y el acceso a contenidos que orienten y fortalezcan el progreso colectivo de toda nuestra audiencia.</p>
+        <p>Promovemos la identidad cultural, la convivencia solidaria y el acceso a contenidos que orienten y fortalezcan el progreso colectivo de nuestros oyentes.</p>
       </div>
     </div>
   </section>
 
-  <!-- Sección 5: Contacto -->
+  <!-- Sección Contacto -->
   <section id="contacto">
     <h2 class="section-title">Contacto y Cabina</h2>
     <div class="contact-grid">
@@ -520,7 +505,7 @@
       </div>
       <div class="contact-item">
         <h4>💬 WhatsApp en Vivo</h4>
-        <p>Envía tus mensajes de texto y notas de voz</p>
+        <p>Envía tus mensajes y notas de voz</p>
         <a href="https://wa.me/51900000000?text=Hola%20Radio%20Rumba%20Si%20Suena" target="_blank" class="btn-whatsapp">Escribir al WhatsApp</a>
       </div>
       <div class="contact-item">
@@ -537,9 +522,9 @@
     <p><a href="/admin/">Acceso al Panel de Administración</a></p>
   </footer>
 
-  <!-- Scripts: Menú móvil y Redirección de Netlify Identity -->
+  <!-- Scripts -->
   <script>
-    // Menú desplegable para celulares
+    // Menú móvil
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
 
@@ -553,7 +538,7 @@
       });
     });
 
-    // Redirección de inicio de sesión de Netlify Identity
+    // Redirección de Netlify Identity
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
