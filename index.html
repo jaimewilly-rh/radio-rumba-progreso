@@ -4,28 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Radio Rumba Si Suena - Progreso Asillo | 97.9 FM</title>
-  <meta name="description" content="Radio Rumba Si Suena - Progreso Asillo. Somos Prensa Alternativa: Noticias, música, educación y voz comunitaria.">
+  <meta name="description" content="Radio Rumba Si Suena - Progreso Asillo. Prensa Alternativa: Noticias, Educación, Cultura, Música y Deportes.">
   
   <!-- Netlify Identity -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
-  <!-- Fuentes modernas -->
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-light: #f0fdfa;       /* Fondo suave verde agua / menta */
-      --bg-card: #ffffff;        /* Blanco puro para tarjetas */
-      --primary: #0284c7;        /* Azul agua / océano vibrante */
+      --bg-light: #f0fdfa;
+      --bg-card: #ffffff;
+      --primary: #0284c7;        /* Azul agua */
       --primary-dark: #0369a1;
-      --teal: #0d9488;           /* Verde agua / turquesa amigable */
-      --rumba-red: #e63946;      /* Rojo rumbero para destacados */
+      --teal: #0d9488;           /* Verde agua / turquesa */
+      --rumba-red: #e63946;      /* Rojo rumbero */
       --gold: #f59e0b;           /* Amarillo dorado */
-      --text-dark: #0f172a;      /* Texto principal oscuro y legible */
-      --text-body: #334155;      /* Texto de lectura */
-      --text-muted: #64748b;     /* Texto secundario */
+      --text-dark: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
       --border-color: #e2e8f0;
       --white: #ffffff;
       --font-title: 'Montserrat', sans-serif;
@@ -37,13 +37,12 @@
 
     body {
       font-family: var(--font-body);
-      background: linear-gradient(180deg, #e0f2fe 0%, #f0fdfa 25%, #f8fafc 100%);
+      background: linear-gradient(180deg, #e0f2fe 0%, #f0fdfa 20%, #f8fafc 100%);
       color: var(--text-body);
       line-height: 1.6;
-      min-height: 100vh;
     }
 
-    /* Barra Superior de Cabina */
+    /* Barra Superior */
     .top-bar {
       background: linear-gradient(90deg, #0d9488, #0284c7);
       color: var(--white);
@@ -51,16 +50,12 @@
       font-size: 0.84rem;
       font-weight: 700;
       text-align: center;
-      letter-spacing: 0.3px;
     }
-
-    .top-bar span {
-      color: #fef08a;
-    }
+    .top-bar span { color: #fef08a; }
 
     /* Navegación */
     header {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
@@ -70,12 +65,12 @@
     }
 
     .nav-container {
-      max-width: 1150px;
+      max-width: 1200px;
       margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.9rem 1.5rem;
+      padding: 0.8rem 1.5rem;
     }
 
     .logo {
@@ -92,14 +87,13 @@
       font-weight: 900;
       padding: 0.35rem 0.65rem;
       border-radius: 8px;
-      font-size: 0.9rem;
-      box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
+      font-size: 0.88rem;
     }
 
     .logo-text {
       font-family: var(--font-title);
       font-weight: 800;
-      font-size: 1.22rem;
+      font-size: 1.18rem;
       color: var(--text-dark);
       line-height: 1.1;
     }
@@ -107,15 +101,14 @@
     .logo-text span {
       color: var(--teal);
       display: block;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.8px;
     }
 
     nav ul {
       display: flex;
       list-style: none;
-      gap: 1.6rem;
+      gap: 1.3rem;
       align-items: center;
     }
 
@@ -123,27 +116,21 @@
       color: var(--text-dark);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       transition: color 0.2s;
     }
 
-    nav a:hover {
-      color: var(--primary);
-    }
+    nav a:hover { color: var(--primary); }
 
     /* Portada / Hero */
     .hero {
-      position: relative;
-      padding: 4.5rem 1.5rem 4rem;
+      padding: 4.5rem 1.5rem 3.5rem;
       text-align: center;
       background: linear-gradient(180deg, rgba(14, 165, 233, 0.12) 0%, rgba(240, 253, 250, 0.6) 100%);
       border-bottom: 1px solid rgba(13, 148, 136, 0.1);
     }
 
-    .hero-content {
-      max-width: 850px;
-      margin: auto;
-    }
+    .hero-content { max-width: 850px; margin: auto; }
 
     .live-tag {
       display: inline-flex;
@@ -156,7 +143,7 @@
       border-radius: 30px;
       font-size: 0.82rem;
       font-weight: 800;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
       box-shadow: 0 2px 8px rgba(230, 57, 70, 0.12);
     }
 
@@ -177,10 +164,10 @@
 
     .hero h1 {
       font-family: var(--font-title);
-      font-size: 2.8rem;
+      font-size: 2.7rem;
       font-weight: 900;
       line-height: 1.15;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       color: var(--text-dark);
     }
 
@@ -200,12 +187,9 @@
     }
 
     .hero p {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       color: var(--text-body);
-      margin-bottom: 2rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 1.8rem;
     }
 
     .hero-actions {
@@ -219,10 +203,10 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.8rem 1.7rem;
+      padding: 0.75rem 1.6rem;
       border-radius: 30px;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       text-decoration: none;
       transition: all 0.3s ease;
       cursor: pointer;
@@ -233,25 +217,33 @@
       color: var(--white);
       box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
     }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
-    }
+    .btn-primary:hover { transform: translateY(-2px); }
 
     .btn-wa {
       background: #25d366;
       color: var(--white);
       box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     }
-    .btn-wa:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
+    .btn-wa:hover { transform: translateY(-2px); opacity: 0.95; }
+
+    /* Secciones Generales */
+    section {
+      padding: 3.8rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    /* Secciones */
-    section {
-      padding: 4rem 1.5rem;
-      max-width: 1150px;
+    .section-alt {
+      background-color: #ffffff;
+      max-width: 100%;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .section-alt-inner {
+      max-width: 1200px;
       margin: auto;
     }
 
@@ -261,13 +253,11 @@
       font-size: 2rem;
       font-weight: 800;
       color: var(--text-dark);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.2rem;
       position: relative;
     }
 
-    .section-title span {
-      color: var(--teal);
-    }
+    .section-title span { color: var(--teal); }
 
     .section-title::after {
       content: '';
@@ -279,11 +269,11 @@
       border-radius: 2px;
     }
 
-    /* Cuadrícula de Noticias */
+    /* Cuadrículas de Noticias / Tarjetas */
     .news-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
+      gap: 1.8rem;
     }
 
     .card {
@@ -298,29 +288,29 @@
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(2, 132, 199, 0.14);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(2, 132, 199, 0.14);
     }
 
     .card img {
       width: 100%;
-      height: 210px;
+      height: 200px;
       object-fit: cover;
     }
 
     .card-img-placeholder {
       background: linear-gradient(135deg, #ccfbf1, #e0f2fe);
-      height: 210px;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--teal);
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
     .card-body {
-      padding: 1.5rem;
+      padding: 1.4rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
@@ -331,34 +321,37 @@
       justify-content: space-between;
       align-items: center;
       font-size: 0.78rem;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
 
     .card-tag {
       font-weight: 800;
       color: var(--teal);
       background: #ccfbf1;
-      padding: 0.25rem 0.65rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 12px;
       text-transform: uppercase;
     }
 
-    .card-date {
-      color: var(--text-muted);
-    }
+    .tag-noticias { color: #0284c7; background: #e0f2fe; }
+    .tag-educacion { color: #7c3aed; background: #ede9fe; }
+    .tag-cultura { color: #b45309; background: #fef3c7; }
+    .tag-deportes { color: #e11d48; background: #ffe4e6; }
+
+    .card-date { color: var(--text-muted); }
 
     .card-title {
       font-family: var(--font-title);
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.6rem;
       line-height: 1.4;
       color: var(--text-dark);
     }
 
     .card-text {
       color: var(--text-body);
-      font-size: 0.95rem;
+      font-size: 0.93rem;
       margin-bottom: 1rem;
       flex-grow: 1;
     }
@@ -372,35 +365,22 @@
       box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    th, td {
-      padding: 1.1rem 1.4rem;
-      border-bottom: 1px solid var(--border-color);
-    }
-
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--border-color); }
     th {
       background: #f8fafc;
       color: var(--text-dark);
       font-family: var(--font-title);
       font-weight: 700;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
-
-    tr:hover td {
-      background: #f0fdfa;
-    }
+    tr:hover td { background: #f0fdfa; }
 
     /* Sobre Nosotros */
     .about-box {
       background: var(--bg-card);
-      padding: 2.5rem;
+      padding: 2.2rem;
       border-radius: 14px;
       border: 1px solid var(--border-color);
       box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
@@ -413,23 +393,19 @@
       font-family: var(--font-title);
       color: var(--teal);
       margin-bottom: 0.8rem;
-      font-size: 1.3rem;
-    }
-
-    .about-box p {
-      color: var(--text-body);
+      font-size: 1.25rem;
     }
 
     /* Contacto */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.8rem;
+      gap: 1.6rem;
     }
 
     .contact-item {
       background: var(--bg-card);
-      padding: 2.2rem 1.5rem;
+      padding: 2rem 1.5rem;
       border-radius: 14px;
       text-align: center;
       border: 1px solid var(--border-color);
@@ -440,20 +416,11 @@
       font-family: var(--font-title);
       margin-bottom: 0.5rem;
       color: var(--primary);
-      font-size: 1.15rem;
     }
 
-    .contact-item p {
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
-    }
+    .contact-item strong { color: var(--text-dark); font-size: 1.15rem; }
 
-    .contact-item strong {
-      color: var(--text-dark);
-      font-size: 1.2rem;
-    }
-
-    /* Botón Flotante de WhatsApp */
+    /* Botón Flotante WhatsApp */
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
@@ -472,11 +439,7 @@
       text-decoration: none;
       transition: all 0.3s ease;
     }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
-    }
+    .whatsapp-float:hover { transform: scale(1.1); }
 
     /* Footer */
     footer {
@@ -485,14 +448,8 @@
       text-align: center;
       padding: 3rem 1.5rem;
       font-size: 0.92rem;
-      margin-top: 3rem;
     }
-
-    footer a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: 600;
-    }
+    footer a { color: #38bdf8; text-decoration: none; font-weight: 600; }
 
     /* Menú móvil */
     .menu-toggle {
@@ -504,7 +461,7 @@
       cursor: pointer;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
       .hero h1 { font-size: 2.1rem; }
       .menu-toggle { display: block; }
       nav ul {
@@ -545,15 +502,17 @@
         <ul id="navMenu">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#noticias">Noticias</a></li>
+          <li><a href="#educacion">Educación</a></li>
+          <li><a href="#cultura">Cultura</a></li>
+          <li><a href="#deportes">Deportes</a></li>
           <li><a href="#programacion">Programación</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Portada / Hero con fondo amigable -->
+  <!-- Portada / Hero -->
   <section class="hero" id="inicio">
     <div class="hero-content">
       <div class="live-tag">
@@ -561,7 +520,7 @@
       </div>
       <h1>Radio Rumba <span>Si Suena</span></h1>
       <div class="hero-slogan">★ SOMOS PRENSA ALTERNATIVA ★</div>
-      <p>La voz independiente de Progreso y Asillo. Información veraz, cultura, educación y la mejor selección musical para toda nuestra región.</p>
+      <p>La voz independiente de Progreso y Asillo. Noticias con rigor, educación, identidad cultural y la mejor música para toda nuestra audiencia.</p>
       
       <div class="hero-actions">
         <a href="https://wa.me/51950904353?text=Hola%20Radio%20Rumba%20Si%20Suena%20Progreso" target="_blank" class="btn btn-wa">
@@ -574,79 +533,81 @@
     </div>
   </section>
 
-  <!-- Sección de Noticias (100% AUTOMÁTICA DESDE DECAP CMS) -->
+  <!-- SECCIÓN 1: NOTICIAS Y ACTUALIDAD -->
   <section id="noticias">
-    <h2 class="section-title">Noticias y <span>Actualidad</span></h2>
+    <h2 class="section-title">📰 Noticias y <span>Actualidad</span></h2>
     <div class="news-grid" id="contenedorNoticias">
-      <!-- Se cargan automáticamente desde content/noticias.json -->
+      <!-- Cargado automáticamente -->
     </div>
   </section>
 
-  <!-- Sección de Programación -->
+  <!-- SECCIÓN 2: EDUCACIÓN Y FORMACIÓN -->
+  <div class="section-alt" id="educacion">
+    <div class="section-alt-inner">
+      <section style="padding: 3.8rem 0;">
+        <h2 class="section-title">📚 Educación y <span>Formación</span></h2>
+        <div class="news-grid" id="contenedorEducacion">
+          <!-- Cargado automáticamente -->
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 3: CULTURA Y TRADICIONES -->
+  <section id="cultura">
+    <h2 class="section-title">🎭 Cultura y <span>Tradiciones</span></h2>
+    <div class="news-grid" id="contenedorCultura">
+      <!-- Cargado automáticamente -->
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: MÚSICA Y DEPORTES -->
+  <div class="section-alt" id="deportes">
+    <div class="section-alt-inner">
+      <section style="padding: 3.8rem 0;">
+        <h2 class="section-title">⚽ Música y <span>Deportes</span></h2>
+        <div class="news-grid" id="contenedorDeportes">
+          <!-- Cargado automáticamente -->
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- SECCIÓN DE PROGRAMACIÓN -->
   <section id="programacion">
     <h2 class="section-title">Parrilla de <span>Programación</span></h2>
     <div class="schedule-table-wrapper">
       <table>
         <thead>
-          <tr>
-            <th>Horario</th>
-            <th>Programa</th>
-            <th>Género</th>
-            <th>Detalle</th>
-          </tr>
+          <tr><th>Horario</th><th>Programa</th><th>Género</th><th>Detalle</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>06:00 - 08:00</td>
-            <td><strong>Amanecer Rumbero</strong></td>
-            <td>Musical / Mañanero</td>
-            <td>La mejor música para empezar el día con energía.</td>
-          </tr>
-          <tr>
-            <td>08:00 - 10:00</td>
-            <td><strong>Prensa Alternativa Informativa</strong></td>
-            <td>Noticias y Actualidad</td>
-            <td>Información sin censura, análisis local, regional y nacional.</td>
-          </tr>
-          <tr>
-            <td>10:00 - 12:00</td>
-            <td><strong>Aula Abierta y Cultura</strong></td>
-            <td>Educativo / Comunitario</td>
-            <td>Espacio de formación, orientación comunal y desarrollo social.</td>
-          </tr>
-          <tr>
-            <td>14:00 - 17:00</td>
-            <td><strong>Tarde Rumbera</strong></td>
-            <td>Música y Complacencias</td>
-            <td>Lo mejor de la música popular y saludos en vivo.</td>
-          </tr>
-          <tr>
-            <td>18:00 - 20:00</td>
-            <td><strong>Voces del Pueblo</strong></td>
-            <td>Diálogo Ciudadano</td>
-            <td>Tribuna libre y participación de las comunidades de Progreso y Asillo.</td>
-          </tr>
+          <tr><td>06:00 - 08:00</td><td><strong>Amanecer Rumbero</strong></td><td>Musical / Mañanero</td><td>La mejor selección musical para iniciar el día.</td></tr>
+          <tr><td>08:00 - 10:00</td><td><strong>Prensa Alternativa Informativa</strong></td><td>Noticias y Actualidad</td><td>Información sin censura, análisis local, regional y nacional.</td></tr>
+          <tr><td>10:00 - 12:00</td><td><strong>Aula Abierta</strong></td><td>Educativo y Formativo</td><td>Espacio de orientación ciudadana, salud y aprendizaje.</td></tr>
+          <tr><td>14:00 - 17:00</td><td><strong>Tarde Rumbera</strong></td><td>Música y Complacencias</td><td>Música variada, complacencias y saludos en vivo.</td></tr>
+          <tr><td>18:00 - 20:00</td><td><strong>Voces del Pueblo</strong></td><td>Comunitario y Opinión</td><td>Tribuna libre y diálogo de las comunidades de Progreso y Asillo.</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- Sección Sobre Nosotros -->
+  <!-- SECCIÓN SOBRE NOSOTROS -->
   <section id="nosotros">
     <h2 class="section-title">Sobre <span>Nuestra Emisora</span></h2>
     <div class="about-box">
       <div>
         <h3>📰 Prensa Alternativa</h3>
-        <p><strong>Radio Rumba Si Suena - Progreso Asillo</strong> es un medio de comunicación independiente comprometido con la verdad, la fiscalización social y la defensa de los intereses de nuestra población.</p>
+        <p><strong>Radio Rumba Si Suena - Progreso Asillo</strong> es un medio de comunicación independiente comprometido con la fiscalización social, la verdad y la defensa de los intereses de nuestra población.</p>
       </div>
       <div>
-        <h3>🤝 Compromiso con el Sur Andino</h3>
-        <p>Promovemos la educación, el debate constructivo, nuestras tradiciones culturales y la integración de todas las comunidades rurales y urbanas de la provincia y la región.</p>
+        <h3>🤝 Compromiso Comunal</h3>
+        <p>Promovemos la educación, el debate constructivo, nuestras tradiciones culturales y la integración de todas las comunidades del sur andino.</p>
       </div>
     </div>
   </section>
 
-  <!-- Sección de Contacto -->
+  <!-- SECCIÓN CONTACTO -->
   <section id="contacto">
     <h2 class="section-title">Contacto y <span>Cabina en Vivo</span></h2>
     <div class="contact-grid">
@@ -656,78 +617,110 @@
         <p><strong>+51 950 904 353</strong></p>
       </div>
       <div class="contact-item">
-        <h4>💬 WhatsApp Comunitario</h4>
-        <p>Mensajes y notas de voz</p>
+        <h4>💬 WhatsApp Oficial</h4>
+        <p>Mensajes de texto y audios</p>
         <a href="https://wa.me/51950904353?text=Hola%20Radio%20Rumba%20Si%20Suena%20Progreso" target="_blank" class="btn btn-wa" style="margin-top: 0.5rem;">Escribir a Cabina</a>
       </div>
       <div class="contact-item">
         <h4>📍 Ubicación</h4>
-        <p>Estudios Principales</p>
+        <p>Estudios y Cabina Principal</p>
         <p><strong>Progreso - Asillo, Puno, Perú</strong></p>
       </div>
     </div>
   </section>
 
-  <!-- Botón flotante de WhatsApp -->
+  <!-- Botón Flotante WhatsApp -->
   <a href="https://wa.me/51950904353?text=Hola%20Radio%20Rumba%20Si%20Suena%20Progreso" class="whatsapp-float" target="_blank" aria-label="Escribir por WhatsApp">
     💬
   </a>
 
-  <!-- Pie de página -->
+  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Radio Rumba Si Suena - Progreso Asillo. "Somos Prensa Alternativa".</p>
     <p style="margin-top: 0.5rem;"><a href="/admin/">Acceso al Panel de Administración</a></p>
   </footer>
 
-  <!-- Lector automático de noticias con ordenamiento -->
+  <!-- LECTOR AUTOMÁTICO CLASIFICADO POR 4 SECCIONES -->
   <script>
     // Menú móvil
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-    // Carga dinámica desde content/noticias.json
+    // Creador de tarjeta HTML
+    function crearTarjetaHTML(item, tagClass) {
+      const card = document.createElement('article');
+      card.className = 'card';
+      
+      let imgHtml = '';
+      if (item.image) {
+        imgHtml = `<img src="${item.image}" referrerpolicy="no-referrer" alt="${item.title}">`;
+      } else {
+        imgHtml = `<div class="card-img-placeholder">📻 Radio Rumba Si Suena</div>`;
+      }
+
+      const fecha = item.date ? new Date(item.date).toLocaleDateString('es-PE', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
+
+      card.innerHTML = `
+        ${imgHtml}
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="card-tag ${tagClass}">${item.category || 'General'}</span>
+            <span class="card-date">${fecha}</span>
+          </div>
+          <h3 class="card-title">${item.title}</h3>
+          <p class="card-text">${item.summary || ''}</p>
+        </div>
+      `;
+      return card;
+    }
+
+    // Carga y distribución inteligente de noticias
     fetch('content/noticias.json')
       .then(res => res.json())
       .then(data => {
-        const contenedor = document.getElementById('contenedorNoticias');
         if (data && data.articulos && data.articulos.length > 0) {
-          contenedor.innerHTML = '';
+          const cNoticias = document.getElementById('contenedorNoticias');
+          const cEducacion = document.getElementById('contenedorEducacion');
+          const cCultura = document.getElementById('contenedorCultura');
+          const cDeportes = document.getElementById('contenedorDeportes');
 
-          // Ordenar: Más reciente primero
-          const articulosOrdenados = [...data.articulos].sort((a, b) => {
-            return new Date(b.date || 0) - new Date(a.date || 0);
-          });
+          cNoticias.innerHTML = '';
+          cEducacion.innerHTML = '';
+          cCultura.innerHTML = '';
+          cDeportes.innerHTML = '';
 
-          articulosOrdenados.forEach(item => {
-            const card = document.createElement('article');
-            card.className = 'card';
-            
-            let imgHtml = '';
-            if (item.image) {
-              imgHtml = `<img src="${item.image}" referrerpolicy="no-referrer" alt="${item.title}">`;
+          // Ordenar por fecha más reciente
+          const articulos = [...data.articulos].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+
+          articulos.forEach(item => {
+            const cat = (item.category || '').toLowerCase();
+
+            if (cat.includes('educa') || cat.includes('formaci')) {
+              cEducacion.appendChild(crearTarjetaHTML(item, 'tag-educacion'));
+            } else if (cat.includes('cultur') || cat.includes('tradici')) {
+              cCultura.appendChild(crearTarjetaHTML(item, 'tag-cultura'));
+            } else if (cat.includes('depor') || cat.includes('músic') || cat.includes('music')) {
+              cDeportes.appendChild(crearTarjetaHTML(item, 'tag-deportes'));
             } else {
-              imgHtml = `<div class="card-img-placeholder">📻 Radio Rumba Si Suena</div>`;
+              // Por defecto: Noticias / Actualidad / Comunidad
+              cNoticias.appendChild(crearTarjetaHTML(item, 'tag-noticias'));
             }
-
-            const fecha = item.date ? new Date(item.date).toLocaleDateString('es-PE', { day: '2-digit', month: 'short', year: 'numeric' }) : '';
-
-            card.innerHTML = `
-              ${imgHtml}
-              <div class="card-body">
-                <div class="card-meta">
-                  <span class="card-tag">${item.category || 'Noticias'}</span>
-                  <span class="card-date">${fecha}</span>
-                </div>
-                <h3 class="card-title">${item.title}</h3>
-                <p class="card-text">${item.summary || ''}</p>
-              </div>
-            `;
-            contenedor.appendChild(card);
           });
+
+          // Si alguna sección no tiene noticias aún, mostrar una tarjeta informativa inicial
+          if (cEducacion.children.length === 0) {
+            cEducacion.innerHTML = `<article class="card"><div class="card-img-placeholder">📚 Formación Continua</div><div class="card-body"><span class="card-tag tag-educacion">Educación</span><h3 class="card-title">Espacios educativos y formativos al aire</h3><p class="card-text">Pronto compartiremos novedades sobre cursos, talleres y orientación para escolares y jóvenes de Progreso.</p></div></article>`;
+          }
+          if (cCultura.children.length === 0) {
+            cCultura.innerHTML = `<article class="card"><div class="card-img-placeholder">🎭 Tradiciones Puneñas</div><div class="card-body"><span class="card-tag tag-cultura">Cultura</span><h3 class="card-title">Promoviendo la identidad y el folclor del sur andino</h3><p class="card-text">Difusión de nuestras festividades, danzas y costumbres comunitarias.</p></div></article>`;
+          }
+          if (cDeportes.children.length === 0) {
+            cDeportes.innerHTML = `<article class="card"><div class="card-img-placeholder">⚽ Pasión Deportiva</div><div class="card-body"><span class="card-tag tag-deportes">Deportes</span><h3 class="card-title">Bloque deportivo y éxitos musicales</h3><p class="card-text">Siga el minuto a minuto del fútbol regional, la Liga 1 y la mejor selección rumbera.</p></div></article>`;
+          }
         }
       })
-      .catch(e => console.log('Cargando noticias...', e));
+      .catch(e => console.log('Cargando secciones...', e));
 
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
