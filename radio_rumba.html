@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radio Rumba Si Suena - Progreso</title>
+  <meta name="description" content="Radio Rumba Si Suena - Progreso: Emisora musical, informativa, comunitaria y educativa.">
+  
+  <style>
+    :root {
+      --primary: #c9182b;       /* Rojo vibrante */
+      --primary-dark: #8c0c1b;
+      --secondary: #f4a261;     /* Acento cálido */
+      --dark: #1a1a1a;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --white: #ffffff;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    /* Navegación */
+    header {
+      background-color: var(--dark);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo span {
+      color: var(--secondary);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--secondary);
+    }
+
+    /* Hero / Portada */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), #333;
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge-container {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    /* Secciones generales */
+    section {
+      padding: 3.5rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+      margin: 0.5rem auto 0;
+    }
+
+    /* Noticias */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-img-placeholder {
+      background-color: #ddd;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .card-body {
+      padding: 1.25rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-title {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-text {
+      color: var(--gray);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+
+    /* Programación */
+    .schedule-table-wrapper {
+      background: var(--white);
+      border-radius: 8px;
+      overflow-x: auto;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: var(--dark);
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: #fafafa;
+    }
+
+    /* Sobre Nosotros */
+    .about-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    /* Contacto */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .contact-item {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .contact-item h4 {
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      color: #bbb;
+    }
+
+    /* Responsive Menu Toggle */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--dark);
+        padding: 1rem 1.5rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">RADIO RUMBA <span>PROGRESO</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#noticias">Noticias</a></li>
+          <li><a href="#programacion">Programación</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Portada / Hero -->
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Radio Rumba Si Suena - Progreso</h1>
+      <p>La voz de la comunidad: música, noticias de actualidad, cultura y educación para todos.</p>
+      <div class="badge-container">
+        <span class="badge">🎵 Musical</span>
+        <span class="badge">📰 Informativa</span>
+        <span class="badge">🤝 Comunitaria</span>
+        <span class="badge">📚 Educativa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Noticias / Actualidad -->
+  <section id="noticias">
+    <h2 class="section-title">Noticias y Actualidad</h2>
+    <div class="news-grid">
+      
+      <!-- Noticia 1 -->
+      <article class="card">
+        <div class="card-img-placeholder">[Imagen: Noticia Local]</div>
+        <div class="card-body">
+          <span class="card-tag">Comunidad</span>
+          <h3 class="card-title">Jornada comunitaria de desarrollo en Progreso</h3>
+          <p class="card-text">Vecinos y organizaciones locales se reúnen para coordinar proyectos educativos y de apoyo social.</p>
+        </div>
+      </article>
+
+      <!-- Noticia 2 -->
+      <article class="card">
+        <div class="card-img-placeholder">[Imagen: Educación]</div>
+        <div class="card-body">
+          <span class="card-tag">Educación</span>
+          <h3 class="card-title">Espacio educativo: Talleres para jóvenes</h3>
+          <p class="card-text">Conozca los horarios y temas de los nuevos talleres formativos transmitidos a través de nuestra señal.</p>
+        </div>
+      </article>
+
+      <!-- Noticia 3 -->
+      <article class="card">
+        <div class="card-img-placeholder">[Imagen: Música y Cultura]</div>
+        <div class="card-body">
+          <span class="card-tag">Cultura</span>
+          <h3 class="card-title">Especial musical: Ritmos que unen pueblos</h3>
+          <p class="card-text">Un recorrido sonoro por nuestras tradiciones y lo mejor de la música popular y contemporánea.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Sección de Programación -->
+  <section id="programacion">
+    <h2 class="section-title">Parrilla de Programación</h2>
+    <div class="schedule-table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Horario</th>
+            <th>Programa</th>
+            <th>Tipo</th>
+            <th>Detalle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>06:00 - 08:00</td>
+            <td><strong>Amanecer Rumbero</strong></td>
+            <td>Musical / Mañanero</td>
+            <td>La mejor selección musical para iniciar el día.</td>
+          </tr>
+          <tr>
+            <td>08:00 - 10:00</td>
+            <td><strong>Progreso Informativo</strong></td>
+            <td>Noticias / Comunidad</td>
+            <td>Actualidad local, entrevistas y participación ciudadana.</td>
+          </tr>
+          <tr>
+            <td>10:00 - 12:00</td>
+            <td><strong>Aula Abierta</strong></td>
+            <td>Educativo / Cultural</td>
+            <td>Temas formativos, orientación y aprendizaje para toda la familia.</td>
+          </tr>
+          <tr>
+            <td>14:00 - 17:00</td>
+            <td><strong>Tarde Rumbera</strong></td>
+            <td>Música y Entretenimiento</td>
+            <td>Música variada y mensajes de nuestra audiencia.</td>
+          </tr>
+          <tr>
+            <td>18:00 - 20:00</td>
+            <td><strong>Voces de la Comunidad</strong></td>
+            <td>Comunitario / Social</td>
+            <td>Espacio de diálogo vecinal y análisis de temas locales.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Sección Sobre Nosotros -->
+  <section id="nosotros">
+    <h2 class="section-title">Sobre Nuestra Emisora</h2>
+    <div class="about-box">
+      <div>
+        <h3>Nuestra Misión</h3>
+        <p><strong>Radio Rumba Si Suena - Progreso</strong> nace con el compromiso de brindar entretenimiento musical de calidad, información objetiva y un canal de expresión abierto para la educación y el desarrollo de nuestra comunidad.</p>
+      </div>
+      <div>
+        <h3>Nuestros Pilares</h3>
+        <p>Promovemos la cultura, la convivencia solidaria y el acceso a contenidos que orienten y fortalezcan el progreso colectivo de nuestros oyentes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de Contacto -->
+  <section id="contacto">
+    <h2 class="section-title">Contacto y Cabina</h2>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <h4>📞 Teléfono / Cabina</h4>
+        <p>Llamadas al aire y mensajes</p>
+        <p><strong>+51 900 000 000</strong></p>
+      </div>
+      <div class="contact-item">
+        <h4>💬 WhatsApp Comunitario</h4>
+        <p>Envía tus saludos y noticias</p>
+        <p><strong>+51 900 000 000</strong></p>
+      </div>
+      <div class="contact-item">
+        <h4>📍 Ubicación</h4>
+        <p>Progreso</p>
+        <p>Estudios y Cabina Principal</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2026 Radio Rumba Si Suena - Progreso. Todos los derechos reservados.</p>
+    <p>Emisora comunitaria, musical y educativa.</p>
+  </footer>
+
+  <!-- JavaScript básico para menú móvil -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic en un enlace (móvil)
+    document.querySelectorAll('#navMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
