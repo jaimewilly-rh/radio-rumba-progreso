@@ -1,0 +1,20 @@
+{
+  "articulos": [
+    {
+      "title": "Gobierno articula medidas prioritarias en programas sociales, salud e infraestructura en regiones",
+      "category": "Comunidad",
+      "date": "2026-08-16T11:58:00.000-05:00",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Palacio_de_Gobierno_del_Per%C3%BA.jpg/1280px-Palacio_de_Gobierno_del_Per%C3%BA.jpg",
+      "summary": "El Ejecutivo refuerza la atención a poblaciones vulnerables, transferencias para servicios básicos de agua potable y el seguimiento a obras públicas en el interior del país.",
+      "body": "En el marco de las prioridades del Estado para el cierre de brechas sociales y la reactivación económica, el Gobierno nacional viene coordinando acciones intersectoriales..."
+    },
+    {
+      "title": "PROINVERSIÓN y el Estado impulsan proyectos por más de S/ 2,700 millones para Puno",
+      "category": "Actualidad",
+      "date": "2026-08-16T10:00:00.000-05:00",
+      "image": "",
+      "summary": "Se promueven iniciativas de Obras por Impuestos y Asociaciones Público-Privadas en salud, educación, transporte y logística comercial.",
+      "body": "Proyectos de impacto regional para el cierre de brechas en el sur andino."
+    }
+  ]
+}
