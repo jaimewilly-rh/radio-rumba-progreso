@@ -12,18 +12,21 @@
   <!-- Fuentes modernas -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg-dark: #0a1118;
-      --bg-card: #121e2a;
-      --primary: #e63946;       /* Rojo Rumba */
-      --primary-hover: #d90429;
-      --accent-blue: #00b4d8;   /* Azul Eléctrico */
-      --accent-gold: #ffb703;   /* Amarillo Dorado */
-      --text-main: #f8f9fa;
-      --text-muted: #a0aec0;
+      --bg-light: #f0fdfa;       /* Fondo suave verde agua / menta */
+      --bg-card: #ffffff;        /* Blanco puro para tarjetas */
+      --primary: #0284c7;        /* Azul agua / océano vibrante */
+      --primary-dark: #0369a1;
+      --teal: #0d9488;           /* Verde agua / turquesa amigable */
+      --rumba-red: #e63946;      /* Rojo rumbero para destacados */
+      --gold: #f59e0b;           /* Amarillo dorado */
+      --text-dark: #0f172a;      /* Texto principal oscuro y legible */
+      --text-body: #334155;      /* Texto de lectura */
+      --text-muted: #64748b;     /* Texto secundario */
+      --border-color: #e2e8f0;
       --white: #ffffff;
       --font-title: 'Montserrat', sans-serif;
       --font-body: 'Open Sans', sans-serif;
@@ -34,38 +37,36 @@
 
     body {
       font-family: var(--font-body);
-      background-color: var(--bg-dark);
-      color: var(--text-main);
+      background: linear-gradient(180deg, #e0f2fe 0%, #f0fdfa 25%, #f8fafc 100%);
+      color: var(--text-body);
       line-height: 1.6;
-      background-image: 
-        radial-gradient(circle at 15% 15%, rgba(0, 180, 216, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(230, 57, 70, 0.08) 0%, transparent 40%);
-      background-attachment: fixed;
+      min-height: 100vh;
     }
 
     /* Barra Superior de Cabina */
     .top-bar {
-      background: linear-gradient(90deg, #b7094c, #e63946, #b7094c);
+      background: linear-gradient(90deg, #0d9488, #0284c7);
       color: var(--white);
-      padding: 0.4rem 1rem;
-      font-size: 0.82rem;
+      padding: 0.45rem 1rem;
+      font-size: 0.84rem;
       font-weight: 700;
       text-align: center;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.3px;
     }
 
     .top-bar span {
-      color: var(--accent-gold);
+      color: #fef08a;
     }
 
     /* Navegación */
     header {
-      background: rgba(10, 17, 24, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 2px 12px rgba(2, 132, 199, 0.06);
     }
 
     .nav-container {
@@ -85,30 +86,30 @@
     }
 
     .logo-badge {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--rumba-red), #b91c1c);
       color: var(--white);
       font-family: var(--font-title);
       font-weight: 900;
       padding: 0.35rem 0.65rem;
       border-radius: 8px;
       font-size: 0.9rem;
-      box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
+      box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
     }
 
     .logo-text {
       font-family: var(--font-title);
       font-weight: 800;
-      font-size: 1.25rem;
-      color: var(--white);
+      font-size: 1.22rem;
+      color: var(--text-dark);
       line-height: 1.1;
     }
 
     .logo-text span {
-      color: var(--accent-gold);
+      color: var(--teal);
       display: block;
       font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
     }
 
     nav ul {
@@ -119,24 +120,24 @@
     }
 
     nav a {
-      color: var(--text-main);
+      color: var(--text-dark);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
-      transition: color 0.3s;
+      font-size: 0.92rem;
+      transition: color 0.2s;
     }
 
     nav a:hover {
-      color: var(--accent-gold);
+      color: var(--primary);
     }
 
-    /* Hero / Portada */
+    /* Portada / Hero */
     .hero {
       position: relative;
       padding: 4.5rem 1.5rem 4rem;
       text-align: center;
-      background: linear-gradient(180deg, rgba(0, 119, 182, 0.15) 0%, rgba(10, 17, 24, 0.95) 100%);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background: linear-gradient(180deg, rgba(14, 165, 233, 0.12) 0%, rgba(240, 253, 250, 0.6) 100%);
+      border-bottom: 1px solid rgba(13, 148, 136, 0.1);
     }
 
     .hero-content {
@@ -148,24 +149,23 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(230, 57, 70, 0.15);
-      border: 1px solid var(--primary);
-      color: var(--primary);
+      background: #ffffff;
+      border: 1px solid #fecaca;
+      color: var(--rumba-red);
       padding: 0.35rem 1rem;
       border-radius: 30px;
       font-size: 0.82rem;
       font-weight: 800;
       margin-bottom: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(230, 57, 70, 0.12);
     }
 
     .live-dot {
       width: 10px;
       height: 10px;
-      background: var(--primary);
+      background: var(--rumba-red);
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--primary);
+      box-shadow: 0 0 8px var(--rumba-red);
       animation: pulse 1.5s infinite;
     }
 
@@ -180,27 +180,32 @@
       font-size: 2.8rem;
       font-weight: 900;
       line-height: 1.15;
-      margin-bottom: 0.75rem;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, #ffffff, var(--accent-gold), #ffffff);
+      margin-bottom: 0.6rem;
+      color: var(--text-dark);
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--teal), var(--primary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-slogan {
       font-family: var(--font-title);
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 800;
-      color: var(--accent-blue);
+      color: var(--rumba-red);
       margin-bottom: 1rem;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .hero p {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      margin-bottom: 1.8rem;
+      font-size: 1.08rem;
+      color: var(--text-body);
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-actions {
@@ -214,7 +219,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.6rem;
+      padding: 0.8rem 1.7rem;
       border-radius: 30px;
       font-weight: 700;
       font-size: 0.95rem;
@@ -224,19 +229,19 @@
     }
 
     .btn-primary {
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: var(--white);
-      box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
     }
     .btn-primary:hover {
-      background: var(--primary-hover);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
     }
 
     .btn-wa {
       background: #25d366;
       color: var(--white);
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
     }
     .btn-wa:hover {
       transform: translateY(-2px);
@@ -255,18 +260,19 @@
       text-align: center;
       font-size: 2rem;
       font-weight: 800;
-      margin-bottom: 2.2rem;
+      color: var(--text-dark);
+      margin-bottom: 2.5rem;
       position: relative;
     }
 
     .section-title span {
-      color: var(--accent-gold);
+      color: var(--teal);
     }
 
     .section-title::after {
       content: '';
       display: block;
-      width: 60px;
+      width: 50px;
       height: 4px;
       background: var(--primary);
       margin: 0.6rem auto 0;
@@ -282,18 +288,18 @@
 
     .card {
       background: var(--bg-card);
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      border: 1px solid var(--border-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      border-color: rgba(0, 180, 216, 0.4);
+      box-shadow: 0 12px 30px rgba(2, 132, 199, 0.14);
     }
 
     .card img {
@@ -303,12 +309,12 @@
     }
 
     .card-img-placeholder {
-      background: #1b2838;
+      background: linear-gradient(135deg, #ccfbf1, #e0f2fe);
       height: 210px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--accent-blue);
+      color: var(--teal);
       font-weight: 700;
       font-size: 1.1rem;
     }
@@ -330,9 +336,9 @@
 
     .card-tag {
       font-weight: 800;
-      color: var(--accent-gold);
-      background: rgba(255, 183, 3, 0.12);
-      padding: 0.2rem 0.6rem;
+      color: var(--teal);
+      background: #ccfbf1;
+      padding: 0.25rem 0.65rem;
       border-radius: 12px;
       text-transform: uppercase;
     }
@@ -343,15 +349,15 @@
 
     .card-title {
       font-family: var(--font-title);
-      font-size: 1.22rem;
+      font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 0.7rem;
       line-height: 1.4;
-      color: var(--white);
+      color: var(--text-dark);
     }
 
     .card-text {
-      color: var(--text-muted);
+      color: var(--text-body);
       font-size: 0.95rem;
       margin-bottom: 1rem;
       flex-grow: 1;
@@ -360,10 +366,10 @@
     /* Programación */
     .schedule-table-wrapper {
       background: var(--bg-card);
-      border-radius: 12px;
+      border-radius: 14px;
       overflow-x: auto;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
     }
 
     table {
@@ -374,12 +380,12 @@
 
     th, td {
       padding: 1.1rem 1.4rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid var(--border-color);
     }
 
     th {
-      background: #182635;
-      color: var(--accent-gold);
+      background: #f8fafc;
+      color: var(--text-dark);
       font-family: var(--font-title);
       font-weight: 700;
       font-size: 0.92rem;
@@ -388,15 +394,16 @@
     }
 
     tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
+      background: #f0fdfa;
     }
 
     /* Sobre Nosotros */
     .about-box {
       background: var(--bg-card);
       padding: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
@@ -404,13 +411,13 @@
 
     .about-box h3 {
       font-family: var(--font-title);
-      color: var(--accent-gold);
+      color: var(--teal);
       margin-bottom: 0.8rem;
       font-size: 1.3rem;
     }
 
     .about-box p {
-      color: var(--text-muted);
+      color: var(--text-body);
     }
 
     /* Contacto */
@@ -422,17 +429,17 @@
 
     .contact-item {
       background: var(--bg-card);
-      padding: 2rem 1.5rem;
-      border-radius: 12px;
+      padding: 2.2rem 1.5rem;
+      border-radius: 14px;
       text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
     }
 
     .contact-item h4 {
       font-family: var(--font-title);
       margin-bottom: 0.5rem;
-      color: var(--accent-gold);
+      color: var(--primary);
       font-size: 1.15rem;
     }
 
@@ -442,8 +449,8 @@
     }
 
     .contact-item strong {
-      color: var(--white);
-      font-size: 1.15rem;
+      color: var(--text-dark);
+      font-size: 1.2rem;
     }
 
     /* Botón Flotante de WhatsApp */
@@ -459,8 +466,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      font-size: 32px;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
       z-index: 9999;
       text-decoration: none;
       transition: all 0.3s ease;
@@ -473,16 +480,16 @@
 
     /* Footer */
     footer {
-      background: #05090d;
-      color: var(--text-muted);
+      background: #0f172a;
+      color: #94a3b8;
       text-align: center;
       padding: 3rem 1.5rem;
       font-size: 0.92rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 3rem;
     }
 
     footer a {
-      color: var(--accent-gold);
+      color: #38bdf8;
       text-decoration: none;
       font-weight: 600;
     }
@@ -492,14 +499,13 @@
       display: none;
       background: none;
       border: none;
-      color: var(--white);
+      color: var(--text-dark);
       font-size: 1.6rem;
       cursor: pointer;
     }
 
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .hero-slogan { font-size: 1.1rem; }
+      .hero h1 { font-size: 2.1rem; }
       .menu-toggle { display: block; }
       nav ul {
         display: none;
@@ -508,9 +514,10 @@
         position: absolute;
         top: 100%;
         left: 0;
-        background: #0d1722;
+        background: #ffffff;
         padding: 1.5rem;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       }
       nav ul.active { display: flex; }
     }
@@ -520,7 +527,7 @@
 
   <!-- Barra de cabina superior -->
   <div class="top-bar">
-    🎙️ <span>RADIO RUMBA SI SUENA</span> | PROGRESO - ASILLO | CABINA DIRECTA: <span>950 904 353</span>
+    🎙️ <span>RADIO RUMBA SI SUENA</span> • 97.9 FM | PROGRESO - ASILLO | CABINA: <span>950 904 353</span>
   </div>
 
   <!-- Navegación -->
@@ -530,7 +537,7 @@
         <span class="logo-badge">97.9 FM</span>
         <div class="logo-text">
           RADIO RUMBA
-          <span>SI SUENA • PROGRESO</span>
+          <span>SI SUENA • PROGRESO ASILLO</span>
         </div>
       </a>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
@@ -546,13 +553,13 @@
     </div>
   </header>
 
-  <!-- Portada / Hero con Identidad de Facebook -->
+  <!-- Portada / Hero con fondo amigable -->
   <section class="hero" id="inicio">
     <div class="hero-content">
       <div class="live-tag">
         <div class="live-dot"></div> AL AIRE • SEÑAL EN VIVO
       </div>
-      <h1>Radio Rumba Si Suena</h1>
+      <h1>Radio Rumba <span>Si Suena</span></h1>
       <div class="hero-slogan">★ SOMOS PRENSA ALTERNATIVA ★</div>
       <p>La voz independiente de Progreso y Asillo. Información veraz, cultura, educación y la mejor selección musical para toda nuestra región.</p>
       
@@ -567,11 +574,11 @@
     </div>
   </section>
 
-  <!-- Sección de Noticias (AUTOMÁTICA DESDE DECAP CMS) -->
+  <!-- Sección de Noticias (100% AUTOMÁTICA DESDE DECAP CMS) -->
   <section id="noticias">
     <h2 class="section-title">Noticias y <span>Actualidad</span></h2>
     <div class="news-grid" id="contenedorNoticias">
-      <!-- Las noticias se cargan automáticamente desde content/noticias.json -->
+      <!-- Se cargan automáticamente desde content/noticias.json -->
     </div>
   </section>
 
@@ -672,14 +679,14 @@
     <p style="margin-top: 0.5rem;"><a href="/admin/">Acceso al Panel de Administración</a></p>
   </footer>
 
-  <!-- Lector automático de noticias con ordenamiento por fecha -->
+  <!-- Lector automático de noticias con ordenamiento -->
   <script>
     // Menú móvil
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     menuToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
 
-    // Carga dinámica de noticias desde content/noticias.json
+    // Carga dinámica desde content/noticias.json
     fetch('content/noticias.json')
       .then(res => res.json())
       .then(data => {
