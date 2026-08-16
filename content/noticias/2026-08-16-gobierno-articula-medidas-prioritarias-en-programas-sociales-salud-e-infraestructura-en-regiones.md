@@ -3,6 +3,7 @@ title: Gobierno articula medidas prioritarias en programas sociales, salud e
   infraestructura en regiones
 category: Comunidad
 date: 2026-08-16T11:58:00.000-05:00
+image: /images/uploads/palacio_de_gobierno_del_perú_2023.jpg
 summary: El Ejecutivo refuerza la atención a poblaciones vulnerables,
   transferencias para servicios básicos de agua y el seguimiento a obras
   públicas en el interior del país.
